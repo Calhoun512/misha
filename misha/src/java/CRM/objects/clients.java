@@ -11,9 +11,9 @@ import java.io.Serializable;
  *
  * @author calho
  */
-public class clients {
+public class clients implements Serializable {
     
-    private int id;
+    private int client_id;
     private String first_name;
     private String last_name;
     private String address_1;
@@ -30,11 +30,11 @@ public class clients {
     private String status;
 
     public int getId() {
-        return id;
+        return client_id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.client_id = id;
     }
 
     public String getFirst_name() {
