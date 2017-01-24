@@ -67,10 +67,11 @@ public class ClientsDAO {
                 c.setEmail(rs.getString("email"));
                 c.setDate_of_hire(rs.getString("date_of_hire"));
                 c.setFile_number(rs.getString("file_number"));
+                return c;
                 
                 
             }
-        })
+        });
     }
     
     
