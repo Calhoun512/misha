@@ -19,6 +19,7 @@ public class interactions implements Serializable {
     private String method_of_contact;
     private String email;
     private String phone;
+    private String notes;
 
     public int getInteraction_id() {
         return interaction_id;
@@ -74,6 +75,14 @@ public class interactions implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+    
+    public String getNotes() {
+        return notes;
+    }
+    
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
     
     
