@@ -40,8 +40,24 @@ public class ClientsDAO {
     public int update(clients clients){
         String sql = "UPDATE clients SET first_name = ?, last_name = ?, address_1 = ?, address_2 = ?, address_3 = ?, city = ?, state = ?, zip = ?, phone = ?, fax = ?, email = ?, date_of_hire = ?, file_number = ? WHERE client_id = ?";
         Object[] values = {clients.getFirst_name(), clients.getLast_name(), clients.getAddress_1(), clients.getAddress_2(), clients.getAddress_3(), clients.getCity(), clients.getState(), clients.getZip(), clients.getPhone(), clients.getFax(), clients.getEmail(), clients.getDate_of_hire(), clients.getFile_number()};
-        return templa
-                        
+        return template.update(sql, values);                       
     }
+    
+    public int delete(int client_id){
+        String sql = "DELETE FROM clients WHERE client_id = ?";
+        Object[] values = {client_id};
+        return template.update(sql, values);
+    }
+    
+    public List<clients> getClientsList(){
+        return template.query("SELECT * FROM clients", new RowMapper<clients>(){
+            public clients mapRow(ResultSet rs, int row) throws SQLException{
+                clients c = new clients();
+                a.setClient_Id(rs.getInt("client_id"));
+            }
+        })
+    }
+    
+    
     
 }
