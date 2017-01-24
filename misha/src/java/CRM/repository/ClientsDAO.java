@@ -74,7 +74,19 @@ public class ClientsDAO {
         });
     }
     
-    public clients getClientById
+    public clients getClientById(int id){
+        String sql = "SELECT * from client WHERE client_id = ?";
+        return template.queryForObject(sql, new Object[]{id}, new BeanPropertyRowMapper<clients>(clients.class)); 
+    }
+    
+       public List<clients> getClientsByPage(int start, int total){
+       String sql = "SELECT * FROM client LIMIT " + (start - 1) + "," + total;
+       return template.query(sql,new RowMapper<clients>(){
+           public clients mapRow(ResultSet rs,int row) throws SQLException{
+               clients c = new clients();
+               
+               
+           }
     
     
     
