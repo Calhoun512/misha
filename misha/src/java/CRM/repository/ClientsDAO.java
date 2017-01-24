@@ -53,7 +53,22 @@ public class ClientsDAO {
         return template.query("SELECT * FROM clients", new RowMapper<clients>(){
             public clients mapRow(ResultSet rs, int row) throws SQLException{
                 clients c = new clients();
-                a.setClient_Id(rs.getInt("client_id"));
+                c.setId(rs.getInt("client_id"));
+                c.setFirst_name(rs.getString("first_name"));
+                c.setLast_name(rs.getString("last_name"));
+                c.setAddress_1(rs.getString("address_1"));
+                c.setAddress_2(rs.getString("address_2"));
+                c.setAddress_3(rs.getString("address_3"));
+                c.setCity(rs.getString("city"));
+                c.setState(rs.getString("state"));
+                c.setZip(rs.getString("zip"));
+                c.setPhone(rs.getString("phone"));
+                c.setFax(rs.getString("fax"));
+                c.setEmail(rs.getString("email"));
+                c.setDate_of_hire(rs.getString("date_of_hire"));
+                c.setFile_number(rs.getString("file_number"));
+                
+                
             }
         })
     }
