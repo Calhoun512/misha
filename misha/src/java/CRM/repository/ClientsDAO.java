@@ -32,14 +32,14 @@ public class ClientsDAO {
      * @return
      */
     public int save(clients clients){
-        String sql = "INSERT INTO CLIENTS (first_name, last_name, address_1, address_2, address_3, city, state, zip, phone, fax, email, date_of_hire, file_number) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        Object[] values = {clients.getFirst_name(), clients.getLast_name(), clients.getAddress_1(), clients.getAddress_2(), clients.getAddress_3(), clients.getCity(), clients.getState(), clients.getZip(), clients.getPhone(), clients.getFax(), clients.getEmail(), clients.getDate_of_hire(), clients.getFile_number()};
+        String sql = "INSERT INTO CLIENTS (first_name, last_name, address_1, address_2, address_3, city, state, zip, phone, fax, email, date_of_hire, file_number, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        Object[] values = {clients.getFirst_name(), clients.getLast_name(), clients.getAddress_1(), clients.getAddress_2(), clients.getAddress_3(), clients.getCity(), clients.getState(), clients.getZip(), clients.getPhone(), clients.getFax(), clients.getEmail(), clients.getDate_of_hire(), clients.getFile_number(), clients.getStatus()};
         return template.update(sql, values);
     }
     
     public int update(clients clients){
-        String sql = "UPDATE clients SET first_name = ?, last_name = ?, address_1 = ?, address_2 = ?, address_3 = ?, city = ?, state = ?, zip = ?, phone = ?, fax = ?, email = ?, date_of_hire = ?, file_number = ? WHERE client_id = ?";
-        Object[] values = {clients.getFirst_name(), clients.getLast_name(), clients.getAddress_1(), clients.getAddress_2(), clients.getAddress_3(), clients.getCity(), clients.getState(), clients.getZip(), clients.getPhone(), clients.getFax(), clients.getEmail(), clients.getDate_of_hire(), clients.getFile_number()};
+        String sql = "UPDATE clients SET first_name = ?, last_name = ?, address_1 = ?, address_2 = ?, address_3 = ?, city = ?, state = ?, zip = ?, phone = ?, fax = ?, email = ?, date_of_hire = ?, file_number = ?, status = ? WHERE client_id = ?";
+        Object[] values = {clients.getFirst_name(), clients.getLast_name(), clients.getAddress_1(), clients.getAddress_2(), clients.getAddress_3(), clients.getCity(), clients.getState(), clients.getZip(), clients.getPhone(), clients.getFax(), clients.getEmail(), clients.getDate_of_hire(), clients.getFile_number(), clients.getStatus()};
         return template.update(sql, values);                       
     }
     
@@ -67,12 +67,14 @@ public class ClientsDAO {
                 c.setEmail(rs.getString("email"));
                 c.setDate_of_hire(rs.getString("date_of_hire"));
                 c.setFile_number(rs.getString("file_number"));
+                c.setStatus(rs.getString("status"));
                 return c;
-                
-                
+                        
             }
         });
     }
+    
+    public clients getClientById
     
     
     
