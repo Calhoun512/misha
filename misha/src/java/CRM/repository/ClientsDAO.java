@@ -11,6 +11,7 @@ import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import CRM.objects.clients;
 
@@ -56,18 +57,7 @@ public class ClientsDAO {
                 c.setId(rs.getInt("client_id"));
                 c.setFirst_name(rs.getString("first_name"));
                 c.setLast_name(rs.getString("last_name"));
-                c.setAddress_1(rs.getString("address_1"));
-                c.setAddress_2(rs.getString("address_2"));
-                c.setAddress_3(rs.getString("address_3"));
-                c.setCity(rs.getString("city"));
-                c.setState(rs.getString("state"));
-                c.setZip(rs.getString("zip"));
-                c.setPhone(rs.getString("phone"));
-                c.setFax(rs.getString("fax"));
-                c.setEmail(rs.getString("email"));
-                c.setDate_of_hire(rs.getString("date_of_hire"));
-                c.setFile_number(rs.getString("file_number"));
-                c.setStatus(rs.getString("status"));
+    
                 return c;
                         
             }
@@ -84,10 +74,35 @@ public class ClientsDAO {
        return template.query(sql,new RowMapper<clients>(){
            public clients mapRow(ResultSet rs,int row) throws SQLException{
                clients c = new clients();
-               
+                c.setId(rs.getInt(1));
+                c.setFirst_name(rs.getString(2));
+                c.setLast_name(rs.getString(3));
+                c.setAddress_1(rs.getString(4));
+                c.setAddress_2(rs.getString(5));
+                c.setAddress_3(rs.getString(6));
+                c.setCity(rs.getString(7));
+                c.setState(rs.getString(8));
+                c.setZip(rs.getString(9));
+                c.setPhone(rs.getString(10));
+                c.setFax(rs.getString(11));
+                c.setEmail(rs.getString(12));
+                c.setDate_of_hire(rs.getString(13));
+                c.setFile_number(rs.getString(14));
+                c.setStatus(rs.getString(15));
+                return c;
                
            }
     
-    
-    
+       });
+           
+}
+        public int getClientCount(){
+          String sql = "SELECT COUNT(client_id) AS rowcount FROM clients";
+          SqlRowSet rs = template.queryForRowSet(sql);
+          if(rs.next()){
+            return rs.getInt("rowcount");
+          }
+          
+          return 1;
+        }
 }
