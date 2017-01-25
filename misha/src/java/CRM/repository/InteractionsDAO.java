@@ -67,10 +67,23 @@ public class InteractionsDAO {
        String sql = "SELECT * FROM client LIMIT " + (start - 1) + "," + total;
        return template.query(sql,new RowMapper<interactions>(){
            public interactions mapRow(ResultSet rs,int row) throws SQLException{
+               interactions i = new interactions();
+               i.setInteraction_id(rs.getInt("interaction_id"));
+               i.setFirst_name(rs.getString("first_name"));
+               i.setLast_name(rs.getString("last_name"));
+               i.setStatus(rs.getString("status"));
+               i.setMethod_of_contact(rs.getString("method_of_contact"));
+               i.setEmail(rs.getString("email"));
+               i.setPhone(rs.getString("phone"));
+               i.setNotes(rs.getString("notes"));
+               return i;
+               
+            }
+    
+       });
     }
     
-       }
-               }
+    
     
 
 }
