@@ -68,14 +68,14 @@ public class InteractionsDAO {
        return template.query(sql,new RowMapper<interactions>(){
            public interactions mapRow(ResultSet rs,int row) throws SQLException{
                interactions i = new interactions();
-               i.setInteraction_id(rs.getInt("interaction_id"));
-               i.setFirst_name(rs.getString("first_name"));
-               i.setLast_name(rs.getString("last_name"));
-               i.setStatus(rs.getString("status"));
-               i.setMethod_of_contact(rs.getString("method_of_contact"));
-               i.setEmail(rs.getString("email"));
-               i.setPhone(rs.getString("phone"));
-               i.setNotes(rs.getString("notes"));
+               i.setInteraction_id(rs.getInt(1));
+               i.setFirst_name(rs.getString(2));
+               i.setLast_name(rs.getString(3));
+               i.setStatus(rs.getString(4));
+               i.setMethod_of_contact(rs.getString(5));
+               i.setEmail(rs.getString(6));
+               i.setPhone(rs.getString(7));
+               i.setNotes(rs.getString(8));
                return i;
                
             }
@@ -83,9 +83,14 @@ public class InteractionsDAO {
        });
     }
     
-    
-    
-
+    public int getInteractionsCount(){
+        String sql = "SELECT COUNT (interaction_id) AS rowcount FROM interactions";
+        SqlRowSet rs = template.queryForRowSet(sql);
+        if (rs.next()){
+            return rs.getInt("rowcount");
+        }
+        return 1;
+    }
 }
 
 
