@@ -86,7 +86,17 @@ public class ProspectsDAO {
            }
     
        });
-    }   
+    }
+    
+    public int getProspectCount(){
+       String sql = "SELECT COUNT(prospect_id) AS rowcount FROM prospects";
+       SqlRowSet rs = template.queryForRowSet(sql);
+       if(rs.next()){
+       return rs.getInt("rowcount");
+          }
+          
+          return 1;
+        }
 
 }
     
