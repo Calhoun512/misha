@@ -83,8 +83,8 @@ public class ClientController {
     }
     
     @RequestMapping(value = "/clients/editclients/{id}")
-    public ModelAndView edit(@PathVariable int id){
-        clients clients = dao.getClientById(id);
+    public ModelAndView edit(@PathVariable int client_id){
+        clients clients = dao.getClientById(client_id);
         return new ModelAndView("clienteditform","clients",clients);
     }
     
@@ -105,9 +105,9 @@ public class ClientController {
         return new ModelAndView("redirect:/clients/viewclients");
     }
     
-    @RequestMapping(value = "/clients/deleteclients/{id}",method = RequestMethod.GET)
-    public ModelAndView delete(@PathVariable int id, HttpServletRequest request){
-        int r = dao.delete(id);
+    @RequestMapping(value = "/clients/deleteclients/{client_id}",method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable int client_id, HttpServletRequest request){
+        int r = dao.delete(client_id);
         
         Message msg = null;
         if (r == 1) {
