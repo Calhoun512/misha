@@ -59,12 +59,12 @@ public class InteractionsDAO {
     }
     
     public interactions getInteractionById (int interaction_id){
-        String sql = "SELECT * from client WHERE client_id = ?";
+        String sql = "SELECT * from interactions WHERE interaction_id = ?";
         return template.queryForObject(sql, new Object[]{interaction_id}, new BeanPropertyRowMapper<interactions>(interactions.class));
     }
     
-    public List<interactions> getClientsByPage(int start, int total){
-       String sql = "SELECT * FROM client LIMIT " + (start - 1) + "," + total;
+    public List<interactions> getInteractionsByPage(int start, int total){
+       String sql = "SELECT * FROM interactions LIMIT " + (start - 1) + "," + total;
        return template.query(sql,new RowMapper<interactions>(){
            public interactions mapRow(ResultSet rs,int row) throws SQLException{
                interactions i = new interactions();
