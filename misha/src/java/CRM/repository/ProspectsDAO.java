@@ -43,7 +43,7 @@ public class ProspectsDAO {
         return template.update(sql);
     }
     
-    public List<prospects> getClientsList(){
+    public List<prospects> getProspectsList(){
         return template.query("SELECT * FROM prospects", new RowMapper<prospects>(){
             public prospects mapRow(ResultSet rs, int row) throws SQLException{
                 prospects p = new prospects();
@@ -64,7 +64,7 @@ public class ProspectsDAO {
         
     }    
     
-    public List<prospects> getClientsByPage(int start, int total){
+    public List<prospects> getProspectsByPage(int start, int total){
        String sql = "SELECT * FROM prospects LIMIT " + (start - 1) + "," + total;
        return template.query(sql,new RowMapper<prospects>(){
            public prospects mapRow(ResultSet rs,int row) throws SQLException{
