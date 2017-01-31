@@ -58,7 +58,7 @@ public class InteractionsDAO {
         });
     }
     
-    public interactions getInteractionById (int interaction_id){
+    public interactions getInteractionsById (int interaction_id){
         String sql = "SELECT * from interactions WHERE interaction_id = ?";
         return template.queryForObject(sql, new Object[]{interaction_id}, new BeanPropertyRowMapper<interactions>(interactions.class));
     }
