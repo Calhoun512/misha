@@ -80,7 +80,7 @@ public class ProspectController {
     
     @RequestMapping(value = "/prospects/editprospects/{prospect_id}")
     public ModelAndView edit(@PathVariable int prospect_id){
-        prospects prospects = dao.getProspectById(prospect_id);
+        prospects prospects = dao.getProspectsById(prospect_id);
         return new ModelAndView("prospecteditform","prospects",prospects);
     }
     
