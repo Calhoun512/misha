@@ -53,11 +53,12 @@ public class ProspectController {
     
     @RequestMapping("/prospects/viewprospects")
     public ModelAndView viewprospects(@PathVariable int pageid, HttpServletRequest request){
-        int total = 25;
         int start = 1;
+        int total = 25;
+        int count = dao.getProspectCount();
         
         if(pageid != 1) {
-            start = (pageid-1) * total + 1;
+           start = (pageid-1) * total + 1;
         }
         
         List<prospects> list = dao.getProspectsByPage(start, total);
