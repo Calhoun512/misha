@@ -51,7 +51,7 @@ public class UsersController {
         
         request.getSession().setAttribute("message", msg);
         
-        return new ModelAndView("redirect:/User/newUser");
+        return new ModelAndView("redirect:/home");
     }
     
     @RequestMapping("/Users/viewUsers/{pageid}")
@@ -103,7 +103,7 @@ public class UsersController {
         
         request.getSession().setAttribute("message", msg);
         
-        return new ModelAndView("redirect:/users/editsave");
+        return new ModelAndView("redirect:/home");
     }
     
     @RequestMapping(value = "/users/deleteuser/{user_id}", method = RequestMethod.GET)
@@ -120,6 +120,6 @@ public class UsersController {
         
         request.getSession().setAttribute("message", msg);
         
-        return new ModelAndView("redirect:/Users/viewUsers");
+        return new ModelAndView("redirect:/home");
     }
 }
