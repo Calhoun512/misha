@@ -16,7 +16,7 @@
 
    <div class="w3-card-4">
        <div class="w3-container w3-blue">
-           <h2>Impulse</h2>
+           <h2>Misha</h2>
        </div>
 
        <form:form method="POST" action="/misha/client/editsave" cssClass="w3-container" commandName="client">
