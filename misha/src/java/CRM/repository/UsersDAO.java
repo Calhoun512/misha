@@ -38,7 +38,7 @@ public class UsersDAO {
         return template.update(sql, values);
     }
     
-    public int delete(Users user_id){
+    public int delete(int user_id){
         String sql = "DELETE FROM users WHERE user_id = ?";
         Object[] values = {user_id};
         return template.update(sql, values);
