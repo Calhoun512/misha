@@ -38,8 +38,9 @@ public class ProspectsDAO {
         return template.update(sql, values);
     }
     
-    public int delete(int prospects){
+    public int delete(int prospect_id){
         String sql = "DELETE FROM prospects WHERE prospect_id = ?";
+        Object[] values = {prospect_id};
         return template.update(sql);
     }
     
