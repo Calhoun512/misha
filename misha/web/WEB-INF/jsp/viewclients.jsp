@@ -16,7 +16,7 @@
     
   <c:if test="${not empty message}">
     <c:choose>
-      <c:when test="${message.type eq 'INFO'}">
+      <c:when test="${message.type eq 'SUCCESS'}">
         <div class="w3-panel w3-border w3-pale-yellow w3-border-yellow"><p>${message.message}</p></div>
       </c:when>
       <c:when test="${message.type eq 'ERROR'}">
