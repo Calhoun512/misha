@@ -38,9 +38,11 @@ public class InteractionsDAO {
         return template.update(sql, values);
     
     }
-    public int delete (int interactions){
+    public int delete (int interaction_id){
         String sql = "DELETE FROM interactions WHERE interaction_id = ?";
+        Object[] values = {interaction_id};
         return template.update(sql);
+        
     }
     
     public List<interactions> getInteractionsList(){
