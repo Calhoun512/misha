@@ -15,7 +15,7 @@
     <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>  
     <property name="url" value="jdbc:mysql://localhost:3306/Misha?zeroDateTimeBehavior=convertToNull"></property>  
     <property name="username" value="root"></property>  
-    <property name="password" value="Start1DB"></property> 
+    <property name="password" value="Start1DB"></property> </bean>
 
 
 </beans>
