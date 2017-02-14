@@ -16,7 +16,8 @@ and open the template in the editor.
   
   <!-- enable use-expressions -->
   <http auto-config="true" use-expressions="true">
-    <intercept-url pattern="/clients/**" access="hasRole('ROLE_ADMIN')" />
+    <intercept-url pattern="/clients/**" access="hasRole('ROLE_USER')" />
+    <intercept-url pattern="/user/**" access="hasRole('ROLE_ADMIN')"/>
 		
     <!-- access denied page -->
     <access-denied-handler error-page="/403" />
