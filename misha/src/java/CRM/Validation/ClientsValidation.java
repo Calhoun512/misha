@@ -26,12 +26,43 @@ public class ClientsValidation implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "client.artist.name.required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "First Name", "clients.first_name.required");
+                ValidationUtils.rejectIfEmptyOrWhitespace(errors,"Last Name", "clients.last_name.required");
+                ValidationUtils.rejectIfEmpty(errors, "Address 1", "clients.Address_1.required");
+                ValidationUtils.rejectIfEmpty(errors, "Address 2", "clients.Address_2.required");
+                ValidationUtils.rejectIfEmpty(errors, "Address 3", "clients.Address_3.required");
+                ValidationUtils.rejectIfEmpty(errors, "City", "clients.city.required");
+                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "State", "clients.state.required");
+                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "ZIP", "clients.zip.required");
+                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Phone", "clients.phone.required");
+                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Fax", "clients.fax.required");
+                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Email", "clients.email.required");
+                ValidationUtils.rejectIfEmpty(errors, "Date of Hire", "clients.date_of_hire");
+                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "File Number", "clients.file_number.required");
+                ValidationUtils.rejectIfEmpty(errors, "Status", "clients.status.required");
+                
         
         clients clients = (clients)target;
 		if(clients.getFirst_name().length() > 45) {
-			errors.rejectValue("name","clients.first_name.length");
+			errors.rejectValue("First Name","clients.first_name.length");
 		}
+                if(clients.getLast_name().length() > 45) {
+                        errors.rejectValue("Last Name", "clients.last_name.length");
+                }
+                if(clients.getAddress_1().length() > 128) {
+                    errors.rejectValue("Address 1", "clients.address_1.length");
+                }
+                if(clients.getAddress_2().length() > 128) {
+                    errors.rejectValue("Address_2", "clients.address_2.length");
+                }
+                if(clients.getAddress_3().length() > 128) {
+                    errors.rejectValue("Address_3", "clients.address_3.length");
+                }
+                if(clients.getCity().length() > 64) {
+                    errors.rejectValue("City", "clients.city.length");
+                }
+                if(clients.getState().length() > 45)
+                    errors.rejectValue("State", "clients.state.length");
         
         if (!clients.getFirst_name().matches("^[A-Za-z0-9]*$")) {
             errors.rejectValue("name","clients.first_name.pattern");
