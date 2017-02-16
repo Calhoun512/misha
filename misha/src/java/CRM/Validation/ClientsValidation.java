@@ -61,8 +61,30 @@ public class ClientsValidation implements Validator {
                 if(clients.getCity().length() > 64) {
                     errors.rejectValue("City", "clients.city.length");
                 }
-                if(clients.getState().length() > 45)
+                if(clients.getState().length() > 45) {
                     errors.rejectValue("State", "clients.state.length");
+                }
+                if(clients.getZip().length() > 16) {
+                    errors.rejectValue("ZIP", "clients.zip.length");
+                }
+                if(clients.getPhone().length() > 16) {
+                    errors.rejectValue("Phone", "clients.phone.length");
+                }
+                if(clients.getFax().length() > 16) {
+                    errors.rejectValue("Fax", "clients.fax.length");
+                }
+                if(clients.getEmail().length() > 45) {
+                    errors.rejectValue("Email", "clients.email.length");
+                }
+                if(clients.getDate_of_hire().length() > 45) {
+                    errors.rejectValue("Date of Hire", "clients.date_of_hire.length");
+                }
+                if(clients.getFile_number().length() > 45) {
+                    errors.rejectValue("File Number", "clients.file_number.length");
+                }
+                if(clients.getStatus().length() > 45) {
+                    errors.rejectValue("Status", "clients.status.length");
+                }
         
         if (!clients.getFirst_name().matches("^[A-Za-z0-9]*$")) {
             errors.rejectValue("name","clients.first_name.pattern");
