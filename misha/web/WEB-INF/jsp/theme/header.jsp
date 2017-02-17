@@ -14,7 +14,7 @@
     <!-- Top container -->
     <div class="w3-container w3-top w3-black w3-large w3-padding" style="z-index:4">
       <button class="w3-btn w3-hide-large w3-padding-0 w3-hover-text-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-      <span class="w3-right">Chinook Spring</span>
+      <span class="w3-right">Misha</span>
     </div>
 
     <!-- Sidenav/menu -->
@@ -43,16 +43,16 @@
       
       <sec:authorize access="hasRole('ROLE_ADMIN')">
       <div class="w3-dropdown-hover">
-        <a href="<c:url value="/artist/viewartist" />" class="w3-padding"><i class="fa fa-music fa-fw"></i>  Artists  <i class="fa fa-caret-down"></i></a>
+        <a href="<c:url value="/clients/viewclients" />" class="w3-padding"><i class="fa fa-music fa-fw"></i>  Clients  <i class="fa fa-caret-down"></i></a>
         <div class="w3-dropdown-content w3-white w3-card-4">
-          <a class="w3-padding w3-dark-grey" href="<c:url value="/artist/artistform" />"><i class="fa fa-plus-square fa-fw"></i>  Add Artist</a>
+          <a class="w3-padding w3-dark-grey" href="<c:url value="/clients/clientsform" />"><i class="fa fa-plus-square fa-fw"></i>  Add Client</a>
         </div>
       </div>
         
       <div class="w3-dropdown-hover">
-        <a href="<c:url value="/album/viewalbum" />" class="w3-padding"><i class="fa fa-microphone fa-fw"></i>  Albums  <i class="fa fa-caret-down"></i></a>
+        <a href="<c:url value="/prospects/viewprospects" />" class="w3-padding"><i class="fa fa-microphone fa-fw"></i>  Prospects  <i class="fa fa-caret-down"></i></a>
         <div class="w3-dropdown-content w3-white w3-card-4">
-          <a class="w3-padding w3-dark-grey" href="<c:url value="/album/albumform" />"><i class="fa fa-plus-square fa-fw"></i>  Add Album</a>
+          <a class="w3-padding w3-dark-grey" href="<c:url value="/prospects/albumform" />"><i class="fa fa-plus-square fa-fw"></i>  Add Prospects</a>
         </div>
       </div>
       </sec:authorize>
