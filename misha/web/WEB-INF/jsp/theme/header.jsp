@@ -41,7 +41,7 @@
       <a href="#" class="w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
       <a href="<c:url value="/" />" class="w3-padding"><i class="fa fa-dashboard fa-fw"></i>  Dashboard</a>
       
-      <sec:authorize access="hasRole('ROLE_ADMIN')">
+      <sec:authorize access="hasRole('ROLE_USER')">
       <div class="w3-dropdown-hover">
         <a href="<c:url value="/clients/viewclients" />" class="w3-padding"><i class="fa fa-music fa-fw"></i>  Clients  <i class="fa fa-caret-down"></i></a>
         <div class="w3-dropdown-content w3-white w3-card-4">
@@ -52,7 +52,14 @@
       <div class="w3-dropdown-hover">
         <a href="<c:url value="/prospects/viewprospects" />" class="w3-padding"><i class="fa fa-microphone fa-fw"></i>  Prospects  <i class="fa fa-caret-down"></i></a>
         <div class="w3-dropdown-content w3-white w3-card-4">
-          <a class="w3-padding w3-dark-grey" href="<c:url value="/prospects/albumform" />"><i class="fa fa-plus-square fa-fw"></i>  Add Prospects</a>
+          <a class="w3-padding w3-dark-grey" href="<c:url value="/prospects/prospectsform" />"><i class="fa fa-plus-square fa-fw"></i>  Add Prospect</a>
+        </div>
+      </div>
+        
+      <div class="w3-dropdown-hover">
+        <a href="<c:url value="/interactions/viewinteractions" />" class="w3-padding"><i class="fa fa-microphone fa-fw"></i>  Interactions  <i class="fa fa-caret-down"></i></a>
+        <div class="w3-dropdown-content w3-white w3-card-4">
+          <a class="w3-padding w3-dark-grey" href="<c:url value="/interactions/interactionsform" />"><i class="fa fa-plus-square fa-fw"></i>  Add Interaction</a>
         </div>
       </div>
       </sec:authorize>
