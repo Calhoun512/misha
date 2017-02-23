@@ -65,12 +65,12 @@ public class ClientsDAO {
     }
     
     public clients getClientById(int client_id){
-        String sql = "SELECT * FROM client WHERE client_id = ?";
+        String sql = "SELECT * FROM clients WHERE client_id = ?";
         return template.queryForObject(sql, new Object[]{client_id}, new BeanPropertyRowMapper<clients>(clients.class)); 
     }
     
        public List<clients> getClientsByPage(int start, int total){
-       String sql = "SELECT * FROM client LIMIT " + (start - 1) + "," + total;
+       String sql = "SELECT * FROM clients LIMIT " + (start - 1) + "," + total;
        return template.query(sql,new RowMapper<clients>(){
            public clients mapRow(ResultSet rs,int row) throws SQLException{
                clients c = new clients();
