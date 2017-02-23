@@ -40,7 +40,8 @@ public class InteractionsController {
     
     @RequestMapping("/interactions/interactionsform")
     public ModelAndView showform(){
-        return new ModelAndView("interactionsform","interactions", new interactions());
+        List<interactions> interact = dao.getInteractionsList();
+        return new ModelAndView("interactionsform","interactions", interact);
     }
     
     @RequestMapping(value = "/interactions/save", method =  RequestMethod.POST)
