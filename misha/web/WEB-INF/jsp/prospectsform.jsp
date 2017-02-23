@@ -19,57 +19,57 @@
       <h2>Header</h2>
     </div>
 
-      <form:form method="post" action="save" cssClass="w3-container" commandName="prospects">
+      <form:form method="post" action="save" cssClass="w3-container" commandName="prospects"/>
       <div class="w3-padding-8">
         <label><b>First Name</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-        <form:form method="post" action="save" cssClass="w3-container">
+        <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Last Name</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>    
-        <form:form method="post" action="save" cssClass="w3-container">
+        <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Address 1</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-        <form:form method="post" action="save" cssClass="w3-container">
+        <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Address 2</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-        <form:form method="post" action="save" cssClass="w3-container">
+        <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Address 3</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-    <form:form method="post" action="save" cssClass="w3-container">
+    <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>City</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-    <form:form method="post" action="save" cssClass="w3-container">
+    <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>State</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-    <form:form method="post" action="save" cssClass="w3-container">
+    <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Zip</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-    <form:form method="post" action="save" cssClass="w3-container">
+    <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Phone</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-    <form:form method="post" action="save" cssClass="w3-container">
+    <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Fax</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-    <form:form method="post" action="save" cssClass="w3-container">
+    <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Email</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
@@ -77,9 +77,9 @@
       <div class="w3-padding-8">
         <button type="submit" class="w3-btn w3-padding w3-blue" style="width:120px">Save</button>
       </div>
-    </form:form>
+   
   </div>
-
+      
 </div>
 
 <%@ include file="theme/footer.jsp" %>
