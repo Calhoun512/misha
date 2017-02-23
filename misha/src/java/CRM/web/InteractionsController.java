@@ -13,7 +13,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -42,7 +44,11 @@ public class InteractionsController {
     }
     
     @RequestMapping(value = "/interactions/save", method =  RequestMethod.POST)
-    public ModelAndView save(@ModelAttribute("interactions") interactions interactions, HttpServletRequest request){
+    public ModelAndView save(@ModelAttribute("interactions") @Valid interactions interactions, BindingResult result, HttpServletRequest request){
+        if(result.hasErrors()){
+            return new ModelAndView("interactionsform", "interactions", interactions);
+        }
+        
         int r = dao.save(interactions);
         
         Message msg = null;
@@ -59,6 +65,11 @@ public class InteractionsController {
     }
     
     @RequestMapping("/interactions/viewinteractions")
+    public ModelAndView viewinteractions(HttpServletRequest request){
+        return this.viewinteractions(1, request);
+    }
+    
+    @RequestMapping("/interactions/viewinteractions/{pageid}")
     public ModelAndView viewinteractions(@PathVariable int pageid, HttpServletRequest request){
         int total = 25;
         int start = 1;
@@ -92,8 +103,11 @@ public class InteractionsController {
         return new ModelAndView("interactionseditform","interactions",interactions);
     }
     
-    @RequestMapping(value = "/prospects/editsave", method = RequestMethod.POST)
-    public ModelAndView editsave(@ModelAttribute("interactions") interactions interactions, HttpServletRequest request){
+    @RequestMapping(value = "/interactions/editsave", method = RequestMethod.POST)
+    public ModelAndView editsave(@ModelAttribute("interactions") @Valid interactions interactions, BindingResult result, HttpServletRequest request){
+        if(result.hasErrors()){
+            return new ModelAndView("interactionseditform", "interactions", interactions);
+        }
         int r = dao.update(interactions);
         
         Message msg = null;
