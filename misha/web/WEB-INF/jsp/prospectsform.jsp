@@ -19,27 +19,27 @@
       <h2>Header</h2>
     </div>
 
-    <form:form method="post" action="save" cssClass="w3-container">
+      <form:form method="post" action="save" cssClass="w3-container" commandName="prospects">
       <div class="w3-padding-8">
         <label><b>First Name</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-    <form:form method="post" action="save" cssClass="w3-container">
+        <form:form method="post" action="save" cssClass="w3-container">
       <div class="w3-padding-8">
         <label><b>Last Name</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>    
-    <form:form method="post" action="save" cssClass="w3-container">
+        <form:form method="post" action="save" cssClass="w3-container">
       <div class="w3-padding-8">
         <label><b>Address 1</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-    <form:form method="post" action="save" cssClass="w3-container">
+        <form:form method="post" action="save" cssClass="w3-container">
       <div class="w3-padding-8">
         <label><b>Address 2</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
       </div>
-    <form:form method="post" action="save" cssClass="w3-container">
+        <form:form method="post" action="save" cssClass="w3-container">
       <div class="w3-padding-8">
         <label><b>Address 3</b></label>
         <form:input path="name" cssClass="w3-input w3-border"  />
