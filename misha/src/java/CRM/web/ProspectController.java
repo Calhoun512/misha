@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import CRM.Validation.ProspectsValidation;
+import javax.validation.Valid;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -42,7 +44,10 @@ public class ProspectController {
     }
     
     @RequestMapping(value = "/prospects/save", method =  RequestMethod.POST)
-    public ModelAndView save(@ModelAttribute("prospects") prospects prospects, HttpServletRequest request){
+    public ModelAndView save(@ModelAttribute("prospects") @Valid prospects prospects, BindingResult result, HttpServletRequest request){
+        if(result.hasErrors()){
+            return new ModelAndView("prospectsform", "prospects", prospects);
+        }
         int r = dao.save(prospects);
         
         Message msg = null;
@@ -59,6 +64,11 @@ public class ProspectController {
     }
     
     @RequestMapping("/prospects/viewprospects")
+    public ModelAndView viewprospects(HttpServletRequest request){
+        return this.viewprospects(1, request);
+    }
+    
+    @RequestMapping("/prospects/viewprospects/{pageid}")
     public ModelAndView viewprospects(@PathVariable int pageid, HttpServletRequest request){
         int start = 1;
         int total = 25;
@@ -73,7 +83,7 @@ public class ProspectController {
         HashMap<String, Object> context = new HashMap<String, Object>();
         context.put("pages", Math.ceil((float)count/(float)total));
         
-        context.put("page", pageid);
+        context.put("page", pageid);      
         
         Message msg = (Message)request.getSession().getAttribute("message");
         
@@ -93,7 +103,10 @@ public class ProspectController {
     }
     
     @RequestMapping(value = "/prospects/editsave", method = RequestMethod.POST)
-    public ModelAndView editsave(@ModelAttribute("prospects") prospects prospects, HttpServletRequest request){
+    public ModelAndView editsave(@ModelAttribute("prospects") @Valid prospects prospects, BindingResult result, HttpServletRequest request){
+        if(result.hasErrors()){
+            return new ModelAndView("prospectseditform", "prospects", prospects);
+        }
         int r = dao.update(prospects);
         
         Message msg = null;
