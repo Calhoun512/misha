@@ -20,6 +20,9 @@ import CRM.repository.ClientsDAO;
 import java.util.HashMap;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.WebDataBinder;
+import CRM.Validation.ClientsValidation;
+import org.springframework.web.bind.annotation.InitBinder;
 
 
 /**
@@ -30,6 +33,9 @@ import javax.servlet.http.HttpServletRequest;
 public class ClientController {
     @Autowired
     ClientsDAO dao;
+    
+    @Autowired
+    private ClientsValidation clientsValidation;
     
     private static final Logger logger = Logger.getLogger(ClientController.class.getName());
     
@@ -121,6 +127,19 @@ public class ClientController {
         request.getSession().setAttribute("message", msg);
         
         return new ModelAndView("redirect:/clients/viewclients");
+    }
+    
+    @InitBinder("clients")
+    public void initBinder(WebDataBinder webDataBinder){
+        webDataBinder.setValidator(clientsValidation);
+    }
+    
+    public ClientsValidation getClientsValidation() {
+        return clientsValidation;
+    }
+    
+    public void setClientsValidation(ClientsValidation clientsValidation) {
+        this.clientsValidation = clientsValidation;
     }
     
 }
