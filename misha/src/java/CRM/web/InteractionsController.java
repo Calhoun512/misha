@@ -5,6 +5,7 @@
  */
 package CRM.web;
 
+import CRM.Validation.InteractionsValidation;
 import CRM.objects.Message;
 import CRM.objects.interactions;
 import CRM.repository.InteractionsDAO;
@@ -13,6 +14,9 @@ import java.util.List;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.Validator;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +30,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class InteractionsController {
     @Autowired
     InteractionsDAO dao;
+    
+    @Autowired
+    private InteractionsValidation interactionsValidation;
     
     private static final Logger logger = Logger.getLogger(InteractionsController.class.getName());
     
@@ -119,5 +126,17 @@ public class InteractionsController {
         return new ModelAndView("redirect:/interactions/viewinteractions");
     }
     
+    @InitBinder("interactions")
+    public void initBinder(WebDataBinder webDataBinder){
+        webDataBinder.setValidator((Validator) interactionsValidation);
+    }
+    
+    public InteractionsValidation getInteractionsValidation() {
+        return interactionsValidation;
+    }
+    
+    public void setInteractionsValidation(InteractionsValidation interactionsValidation) {
+        this.interactionsValidation = interactionsValidation;
+    }
     
 }

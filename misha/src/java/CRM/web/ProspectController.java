@@ -18,6 +18,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import CRM.Validation.ProspectsValidation;
+import org.springframework.validation.Validator;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 
 /**
  *
@@ -26,6 +30,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProspectController {
     @Autowired
     ProspectsDAO dao;
+    
+    @Autowired
+    private ProspectsValidation prospectsValidation;
     
     private static final Logger logger = Logger.getLogger(ProspectController.class.getName());
     
@@ -119,4 +126,20 @@ public class ProspectController {
         return new ModelAndView("redirect:/prospects/viewprospects");
     }
     
+    /**
+     *
+     * @param webDataBinder
+     */
+   @InitBinder("prospects")
+    public void initBinder(WebDataBinder webDataBinder){
+        webDataBinder.setValidator((Validator) prospectsValidation);
+    }
+    
+    public ProspectsValidation getProspectsValidation() {
+        return prospectsValidation;
+    }
+    
+    public void setProspectsValidation(ProspectsValidation prospectsValidation) {
+        this.prospectsValidation = prospectsValidation;
+    }
 }
