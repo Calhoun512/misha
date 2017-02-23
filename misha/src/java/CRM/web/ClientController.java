@@ -22,6 +22,8 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.WebDataBinder;
 import CRM.Validation.ClientsValidation;
+import javax.validation.Valid;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.InitBinder;
 
 
@@ -41,11 +43,14 @@ public class ClientController {
     
     @RequestMapping("/clients/clientform")
     public ModelAndView showform(){
-        return new ModelAndView("clientform","clients", new clients());
+        return new ModelAndView("clientsform","clients", new clients());
     }
     
     @RequestMapping(value = "/clients/save", method =  RequestMethod.POST)
-    public ModelAndView save(@ModelAttribute("clients") clients clients, HttpServletRequest request){
+    public ModelAndView save(@ModelAttribute("clients") @Valid clients clients, BindingResult result, HttpServletRequest request){
+        if(result.hasErrors()){
+            return new ModelAndView("clientsform", "clients", clients);
+        }
         int r = dao.save(clients);
         
         Message msg = null;
@@ -62,6 +67,11 @@ public class ClientController {
     }
     
     @RequestMapping("/clients/viewclients")
+    public ModelAndView viewclients(HttpServletRequest request){
+        return this.viewclients(1, request);
+    }
+    
+    @RequestMapping("/clients/viewclients{pageid}")
     public ModelAndView viewclients(@PathVariable int pageid, HttpServletRequest request){
         int total = 25;
         int start = 1;
@@ -89,14 +99,17 @@ public class ClientController {
         return new ModelAndView("viewclients", context);
     }
     
-    @RequestMapping(value = "/clients/editclients/{id}")
+    @RequestMapping(value = "/clients/editclients/{client_id}")
     public ModelAndView edit(@PathVariable int client_id){
         clients clients = dao.getClientById(client_id);
         return new ModelAndView("clienteditform","clients",clients);
     }
     
     @RequestMapping(value = "/clients/editsave", method = RequestMethod.POST)
-    public ModelAndView editsave(@ModelAttribute("clients") clients clients, HttpServletRequest request){
+    public ModelAndView editsave(@ModelAttribute("clients") @Valid clients clients, BindingResult result, HttpServletRequest request){
+        if(result.hasErrors()){
+            return new ModelAndView("clientseditform", "clients", clients);
+        }
         int r = dao.update(clients);
         
         Message msg = null;
