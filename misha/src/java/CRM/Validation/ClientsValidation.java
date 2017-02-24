@@ -28,12 +28,12 @@ public class ClientsValidation implements Validator {
 	public void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "First Name", "clients.first_name.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors,"Last Name", "clients.last_name.required");
-                ValidationUtils.rejectIfEmpty(errors, "Address 1", "clients.Address_1.required");
-                ValidationUtils.rejectIfEmpty(errors, "Address 2", "clients.Address_2.required");
-                ValidationUtils.rejectIfEmpty(errors, "Address 3", "clients.Address_3.required");
+                ValidationUtils.rejectIfEmpty(errors, "Address 1", "clients.address_1.required");
+                ValidationUtils.rejectIfEmpty(errors, "Address 2", "clients.address_2.required");
+                ValidationUtils.rejectIfEmpty(errors, "Address 3", "clients.address_3.required");
                 ValidationUtils.rejectIfEmpty(errors, "City", "clients.city.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "State", "clients.state.required");
-                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "ZIP", "clients.zip.required");
+                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Zip", "clients.zip.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Phone", "clients.phone.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Fax", "clients.fax.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Email", "clients.email.required");
@@ -86,10 +86,10 @@ public class ClientsValidation implements Validator {
                     errors.rejectValue("Status", "clients.status.length");
                 }
         
-        if (!clients.getFirst_name().matches("^[A-Za-z ]{2,45}*$/")) {
+        if (!clients.getFirst_name().matches("^[A-Za-z ]{2,45}$/")) {
             errors.rejectValue("First Name","clients.first_name.pattern");
         }
-        if (!clients.getLast_name().matches("[^A-Za-z0-9_'-]{2,45}*$/")) {
+        if (!clients.getLast_name().matches("[^A-Za-z0-9_'-]{2,45}$/")) {
             errors.rejectValue("Last Name", "clients.last_name.pattern");
         }
         if (!clients.getAddress_1().matches("\\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\\.?")) {
