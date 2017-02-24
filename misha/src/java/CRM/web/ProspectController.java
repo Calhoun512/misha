@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import CRM.Validation.ProspectsValidation;
 import javax.validation.Valid;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.WebDataBinder;
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.InitBinder;
  *
  * @author calho
  */
+@Controller
 public class ProspectController {
     @Autowired
     ProspectsDAO dao;
