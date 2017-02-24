@@ -19,11 +19,11 @@
       Client Information
     </div>
 
-      <form:form method="post" action="save" cssClass="w3-container" commandName="clients"/>
+      <form:form method="post" action="save" cssClass="w3-container" modelAttribute="clients"/>
       <div class="w3-padding-8">
         <label><b>First Name</b></label>
-        <form:input path="first_name" cssClass="w3-input w3-border"  />
-        <form:errors path="first_name" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
+        <form:input path="firstname" cssClass="w3-input w3-border"  />
+        <form:errors path="firstname" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
