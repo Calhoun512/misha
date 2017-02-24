@@ -22,7 +22,7 @@
       <form:form method="post" action="save" cssClass="w3-container" commandName="clients"/>
       <div class="w3-padding-8">
         <label><b>First Name</b></label>
-        <form:input path="*{first_name}" cssClass="w3-input w3-border"  />
+        <form:input path="first_name" cssClass="w3-input w3-border"  />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
