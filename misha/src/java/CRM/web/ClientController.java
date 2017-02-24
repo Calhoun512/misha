@@ -154,5 +154,4 @@ public class ClientController {
     public void setClientsValidation(ClientsValidation clientsValidation) {
         this.clientsValidation = clientsValidation;
     }
-    
 }
