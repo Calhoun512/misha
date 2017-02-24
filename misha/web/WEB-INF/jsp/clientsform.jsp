@@ -23,71 +23,85 @@
       <div class="w3-padding-8">
         <label><b>First Name</b></label>
         <form:input path="first_name" cssClass="w3-input w3-border"  />
+        <form:errors path="first_name" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Last Name</b></label>
         <form:input path="last_name" cssClass="w3-input w3-border"  />
+        <form:errors path="last_name" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>    
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Address 1</b></label>
         <form:input path="address_1" cssClass="w3-input w3-border"  />
+        <form:errors path="address_1" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Address 2</b></label>
         <form:input path="address_2" cssClass="w3-input w3-border"  />
+        <form:errors path="address_2" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Address 3</b></label>
         <form:input path="address_3" cssClass="w3-input w3-border"  />
+        <form:errors path="address_3" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>City</b></label>
         <form:input path="city" cssClass="w3-input w3-border"  />
+        <form:errors path="city" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>State</b></label>
         <form:input path="state" cssClass="w3-input w3-border"  />
+        <form:errors path="state" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Zip</b></label>
         <form:input path="zip" cssClass="w3-input w3-border"  />
+        <form:errors path="zip" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Phone</b></label>
         <form:input path="phone" cssClass="w3-input w3-border"  />
+        <form:errors path="phone" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Fax</b></label>
         <form:input path="fax" cssClass="w3-input w3-border"  />
+        <form:errors path="fax" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Email</b></label>
         <form:input path="email" cssClass="w3-input w3-border"  />
+        <form:errors path="email" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Date Of Hire</b></label>
         <form:input path="date_of_hire" cssClass="w3-input w3-border"  />
+        <form:errors path="date_of_hire" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>File Number</b></label>
         <form:input path="file_number" cssClass="w3-input w3-border"  />
+        <form:errors path="file_number" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
     <form:form method="post" action="save" cssClass="w3-container"/>
       <div class="w3-padding-8">
         <label><b>Status</b></label>
         <form:input path="status" cssClass="w3-input w3-border"  />
+        <form:errors path="status" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
       <div class="w3-padding-8">
         <button type="submit" class="w3-btn w3-padding w3-blue" style="width:120px">Save</button>
