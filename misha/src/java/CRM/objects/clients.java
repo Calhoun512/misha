@@ -149,4 +149,24 @@ public class clients implements Serializable {
         this.status = status;
     }
     
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("ID: " + this.client_id + ";");
+        buffer.append("First Name: " + first_name);
+        buffer.append("Last Name: " + last_name);
+        buffer.append("Address 1: " + address_1);
+        buffer.append("Address 2: " + address_2);
+        buffer.append("Address 3: " + address_3);
+        buffer.append("City: " + city);
+        buffer.append("State: " + state);
+        buffer.append("Zip: " + zip);
+        buffer.append("Phone: " + phone);
+        buffer.append("Fax: " + fax);
+        buffer.append("Email: " + email);
+        buffer.append("Date of Hire: " + date_of_hire);
+        buffer.append("File Number: " + file_number);
+        buffer.append("Status: " + status);
+        return buffer.toString();
+    }
+    
 }
