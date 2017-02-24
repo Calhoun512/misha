@@ -42,7 +42,7 @@ public class ClientController {
     private static final Logger logger = Logger.getLogger(ClientController.class.getName());
     
     @RequestMapping("/clients/clientsform")
-    public ModelAndView showform(){
+    public ModelAndView showform(BindingResult result){
         return new ModelAndView("clientsform","clients", new clients());
     }
     
