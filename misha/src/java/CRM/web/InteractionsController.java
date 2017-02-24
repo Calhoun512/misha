@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.WebDataBinder;
@@ -29,6 +30,7 @@ import org.springframework.web.servlet.ModelAndView;
  *
  * @author calho
  */
+@Controller
 public class InteractionsController {
     @Autowired
     InteractionsDAO dao;
