@@ -99,9 +99,9 @@ public class ClientController {
         return new ModelAndView("viewclients", context);
     }
     
-    @RequestMapping(value = "/clients/editclients/{id}")
-    public ModelAndView edit(@PathVariable int id){
-        clients clients = dao.getClientById(id);
+    @RequestMapping(value = "/clients/editclients/{client_id}")
+    public ModelAndView edit(@PathVariable int client_id){
+        clients clients = dao.getClientById(client_id);
         return new ModelAndView("clienteditform","clients",clients);
     }
     
