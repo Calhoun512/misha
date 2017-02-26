@@ -22,8 +22,8 @@
       <form:form method="post" action="save" cssClass="w3-container" modelAttribute="clients"/>
       <div class="w3-padding-8">
         <label><b>First Name</b></label>
-        <form:input path="firstname" cssClass="w3-input w3-border"  />
-        <form:errors path="firstname" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
+        <form:input path="first_name" cssClass="w3-input w3-border"  />
+        <form:errors path="first_name" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
       <div class="w3-padding-8">
         <button type="submit" class="w3-btn w3-padding w3-blue" style="width:120px">Save</button>
