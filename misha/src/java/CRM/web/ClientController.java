@@ -46,7 +46,7 @@ public class ClientController {
         return new ModelAndView("clientsform","clients", new clients());
     }
     
-    @RequestMapping(value = "/clients/save", method =  RequestMethod.POST)
+    @RequestMapping(value = "/clients/save", method =  RequestMethod.GET)
     public ModelAndView save(@ModelAttribute("clients") @Valid clients clients, BindingResult result, HttpServletRequest request){
         if(result.hasErrors()){
             return new ModelAndView("clientsform", "clients", clients);
