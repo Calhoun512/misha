@@ -16,7 +16,7 @@
 
   <div class="w3-card-4">
     <div class="w3-container w3-blue">
-      <h2>Header</h2>
+      Interaction Information
     </div>
 
       <form:form method="post" action="save" cssClass="w3-container" commandName="interactions">
