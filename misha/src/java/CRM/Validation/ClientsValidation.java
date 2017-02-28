@@ -29,8 +29,6 @@ public class ClientsValidation implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "First Name", "clients.first_name.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors,"Last Name", "clients.last_name.required");
                 ValidationUtils.rejectIfEmpty(errors, "Address 1", "clients.address_1.required");
-                ValidationUtils.rejectIfEmpty(errors, "Address 2", "clients.address_2.required");
-                ValidationUtils.rejectIfEmpty(errors, "Address 3", "clients.address_3.required");
                 ValidationUtils.rejectIfEmpty(errors, "City", "clients.city.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "State", "clients.state.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Zip", "clients.zip.required");
