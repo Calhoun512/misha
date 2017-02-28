@@ -40,18 +40,23 @@
            <div class="w3-padding-8">
                <label><b>Method of Contact</b></label>
                <form:input path="method_of_contact" cssClass="w3-input w3-border"  />
+                <form:errors path="method_of_contact" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
+               
            </div>
            <div class="w3-padding-8">
                <label><b>Email</b></label>
                <form:input path="email" cssClass="w3-input w3-border"  />
+                <form:errors path="email" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
            </div>
            <div class="w3-padding-8">
                <label><b>Phone</b></label>
                <form:input path="phone" cssClass="w3-input w3-border"  />
+                <form:errors path="phone" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
            </div>
            <div class="w3-padding-8">
                <label><b>Notes</b></label>
                <form:input path="notes" cssClass="w3-input w3-border"  />
+                <form:errors path="notes" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
            </div>
            <div class="w3-padding-8">
                <button type="submit" class="w3-btn w3-padding w3-blue" style="width:120px">Save</button>
