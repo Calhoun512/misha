@@ -40,7 +40,7 @@
       <th>Action</th>
     </tr>  
 <t
-    <c:forEach var="clients" items="${list}">   
+    <c:forEach var="interactions" items="${list}">   
       <tr>  
         <td>${interactions.title}</td>
         <td>${interactions.first_name}</td>
