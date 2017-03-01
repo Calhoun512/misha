@@ -6,8 +6,8 @@
 package CRM.objects;
 
 import java.io.Serializable;
-//import java.util.LinkedHashMap;
-//import java.util.Map;
+import java.util.LinkedHashMap;
+import java.util.Map;
 /**
  *
  * @author calho
@@ -22,6 +22,17 @@ public class interactions implements Serializable {
     private String email;
     private String phone;
     private String notes;
+    private Map<String, String> contact_type;
+    
+    public Map<String, String> getContact_type() {
+        contact_type = new LinkedHashMap<>();
+        contact_type.put("Direct", "Direct");
+        contact_type.put("Phone", "Phone");
+        contact_type.put("Email", "Email");
+        contact_type.put("Message", "Message");
+        
+        return contact_type;
+    }
 
     public int getInteraction_id() {
         return interaction_id;
