@@ -19,7 +19,7 @@
            <h2>Misha</h2>
        </div>
 
-       <form:form method="POST" action="/misha/clients/editsave" cssClass="w3-container" commandName="client">
+       <form:form method="POST" action="/misha/clients/editsave" cssClass="w3-container" commandName="clients">
            <form:hidden path="client_id"  />
 
            <div class="w3-padding-8">
