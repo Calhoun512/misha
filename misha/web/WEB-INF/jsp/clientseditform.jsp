@@ -30,7 +30,7 @@
            <div class="w3-padding-8">
                <label><b>Last Name</b></label>
                <form:input path="last_name" cssClass="w3-input w3-border"  />
-               <form:errors path="first_name" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
+               <form:errors path="last_name" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
            </div>
            <div class="w3-padding-8">
                <label><b>Address 1</b></label>
@@ -86,6 +86,7 @@
                <label><b>File_Number</b></label>
                <form:input path="file_number" cssClass="w3-input w3-border"  />
                <form:errors path="file_number" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
+           </div>
            <div class="w3-padding-8">
                <label><b>Status</b></label>
                <form:input path="status" cssClass="w3-input w3-border"  />

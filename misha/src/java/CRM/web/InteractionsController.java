@@ -5,6 +5,7 @@
  */
 package CRM.web;
 
+import java.util.ArrayList;
 import CRM.Validation.InteractionsValidation;
 import CRM.objects.Message;
 import CRM.objects.interactions;
