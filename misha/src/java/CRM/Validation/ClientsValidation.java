@@ -31,7 +31,7 @@ public class ClientsValidation implements Validator {
                 ValidationUtils.rejectIfEmpty(errors, "address_1", "clients.address_1.required");
                 ValidationUtils.rejectIfEmpty(errors, "city", "clients.city.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "state", "clients.state.required");
-                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "zip", "clients.zip.required");
+               // ValidationUtils.rejectIfEmptyOrWhitespace(errors, "zip", "clients.zip.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "phone", "clients.phone.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "fax", "clients.fax.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "clients.email.required");
@@ -105,9 +105,9 @@ public class ClientsValidation implements Validator {
         if (!clients.getState().matches("^(?-i:A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$")) {
             errors.rejectValue("state", "clients.state.pattern");
         }
-        if (!clients.getZip().matches("^\\b\\d{5}(?:-\\d{4})?\\b$")){
-            errors.rejectValue("zip", "clients.zip.pattern");
-        }
+//        if (!clients.getZip().matches("^\\b\\d{5}(?:-\\d{4})?\\b$")){
+//            errors.rejectValue("zip", "clients.zip.pattern");
+//        }
         if (!clients.getPhone().matches("^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?$")) {
             errors.rejectValue("phone", "clients.phone.pattern");
         }
