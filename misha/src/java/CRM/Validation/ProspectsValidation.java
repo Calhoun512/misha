@@ -30,13 +30,10 @@ public class ProspectsValidation implements Validator {
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "First Name", "prospects.first_name.required");
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Last Name", "prospects.last_name.required");
             ValidationUtils.rejectIfEmpty(errors, "Address 1", "prospects.address_1.required");
-            ValidationUtils.rejectIfEmpty(errors, "Address 2", "prospects.address_2.required");
-            ValidationUtils.rejectIfEmpty(errors, "Address 3", "prospects.address_3.required");
             ValidationUtils.rejectIfEmpty(errors, "City", "prospects.city.required");
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "State", "prospects.state.required");
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Zip", "prospects.zip.required");
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Phone", "prospects.phone.required");
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Fax", "prospects.fax.required");
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Email", "prospects.email.required");
             
     prospects prospects = (prospects)target;
