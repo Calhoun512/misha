@@ -62,8 +62,8 @@
         <td>${prospects.fax}</td>
         <td>${prospects.email}</td>   
         <td>
-          <a href="<c:url value="/prospects/editprospect/${prospect.id}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
-          <a href="<c:url value="/prospects/deleteprospect/${prospect.id}" />"><button class="w3-btn w3-round w3-red">Delete</button></a>
+          <a href="<c:url value="/prospects/editprospect/${prospect.prospect_id}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
+          <a href="<c:url value="/prospects/deleteprospect/${prospect.prospect_id}" />"><button class="w3-btn w3-round w3-red">Delete</button></a>
         </td>  
       </tr>  
     </c:forEach>  
