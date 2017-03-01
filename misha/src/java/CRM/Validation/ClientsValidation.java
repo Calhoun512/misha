@@ -62,9 +62,9 @@ public class ClientsValidation implements Validator {
                 if(clients.getState().length() > 2) {
                     errors.rejectValue("state", "clients.state.length");
                 }
-                if(clients.getZip().length() > 16) {
-                    errors.rejectValue("zip", "clients.zip.length");
-                }
+//                if(clients.getZip().length() > 16) {
+//                    errors.rejectValue("zip", "clients.zip.length");
+//                }
                 if(clients.getPhone().length() > 16) {
                     errors.rejectValue("phone", "clients.phone.length");
                 }
