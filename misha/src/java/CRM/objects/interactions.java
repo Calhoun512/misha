@@ -85,5 +85,17 @@ public class interactions implements Serializable {
         this.notes = notes;
     }
     
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("ID: " + this.interaction_id + ";");
+        buffer.append("First Name: " + first_name);
+        buffer.append("Last Name: " + last_name);
+        buffer.append("Status: " + status);
+        buffer.append("Method of Contact: " + method_of_contact);
+        buffer.append("Email: " + email);
+        buffer.append("Phone: " + phone);
+        buffer.append("Notes: " + notes);
+        return buffer.toString();
+    }
     
 }
