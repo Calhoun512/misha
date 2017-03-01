@@ -67,6 +67,7 @@
         <td>
           <a href="<c:url value="/clents/editclient/${clients.client_id}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
           <a href="<c:url value="/clients/deleteclient/${clients.client_id}" />"><button class="w3-btn w3-round w3-red">Delete</button></a>
+          <a href="<c:url value="/clients/clientsform/${clients.client_id}" />"><button class="w3-btn w3-round w3-red">Delete</button></a>
         </td>  
       </tr>  
     </c:forEach>  
