@@ -104,7 +104,7 @@ public class ClientsValidation implements Validator {
         if (!clients.getState().matches("^(?-i:A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$")) {
             errors.rejectValue("state", "clients.state.pattern");
         }
-        if (!clients.getZip().matches("^\\b\\d{5}(?:-\\d{4})?\\b$")){
+        if (clients.getZip() != null && !clients.getZip().matches("^\\b\\d{5}(?:-\\d{4})?\\b$")){
             errors.rejectValue("zip", "clients.zip.pattern");
         }
         if (!clients.getPhone().matches("^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?$")) {
