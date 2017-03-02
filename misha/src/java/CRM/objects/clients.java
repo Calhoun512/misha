@@ -103,7 +103,7 @@ public class clients implements Serializable {
         return statesMap;
     }
     
-    private Map<String, String> getStatusMap(){
+    public Map<String, String> getStatusMap(){
         this.statusMap = new LinkedHashMap<String, String>();
         this.statusMap.put("Active", "Active");
         this.statusMap.put("Inactive", "Inactive");
