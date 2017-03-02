@@ -63,6 +63,12 @@
         <form:errors path="state" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
         
       </div>
+        <div class="w3-padding-8">
+        <label><b>Phone</b></label>
+        <form:input path="zip" cssClass="w3-input w3-border" placeholder="Zip"  />
+        <form:errors path="zip" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
+      </div>
+        
 
       <div class="w3-padding-8">
         <label><b>Phone</b></label>
