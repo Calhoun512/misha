@@ -104,6 +104,7 @@ public class clients implements Serializable {
     }
     
     private Map<String, String> getStatusMap(){
+        this.statusMap = new LinkedHashMap<String, String>();
         this.statusMap.put("Active", "Active");
         this.statusMap.put("Inactive", "Inactive");
         this.statusMap.put("prospect", "Prospect");
@@ -241,7 +242,7 @@ public class clients implements Serializable {
         buffer.append("Address 2: " + address_2);
         buffer.append("Address 3: " + address_3);
         buffer.append("City: " + city);
-       // buffer.append("State: " + state);
+        buffer.append("State: " + state);
         buffer.append("Zip: " + zip);
         buffer.append("Phone: " + phone);
         buffer.append("Fax: " + fax);
