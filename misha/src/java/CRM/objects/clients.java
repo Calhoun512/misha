@@ -22,14 +22,14 @@ public class clients implements Serializable {
     private String address_2;
     private String address_3;
     private String city;
-   // private String state;
+    private String state;
     private String zip;
     private String phone;
     private String fax;
     private String email;
     private String date_of_hire;
     private String file_number;
-   // private String status;
+    private String status;
     private Map<String, String> statesMap;
     private Map<String, String> statusMap;
     
@@ -106,7 +106,7 @@ public class clients implements Serializable {
     private Map<String, String> getStatusMap(){
         this.statusMap.put("Active", "Active");
         this.statusMap.put("Inactive", "Inactive");
-        this.statusMap.put("prospect", "prospect");
+        this.statusMap.put("prospect", "Prospect");
         
         return statusMap;
     }
@@ -168,13 +168,13 @@ public class clients implements Serializable {
         this.city = city;
     }
 
-//    public String getState() {
-//        return state;
-//    }
-//
-//    public void setState(String state) {
-//        this.state = state;
-//    }
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
 
     public String getZip() {
         return zip;
@@ -224,13 +224,13 @@ public class clients implements Serializable {
         this.file_number = file_number;
     }
 
-//    public String getStatus() {
-//        return status;
-//    }
-//
-//    public void setStatus(String status) {
-//        this.status = status;
-//    }
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
     
     public String toString() {
         StringBuffer buffer = new StringBuffer();
@@ -248,7 +248,7 @@ public class clients implements Serializable {
         buffer.append("Email: " + email);
         buffer.append("Date of Hire: " + date_of_hire);
         buffer.append("File Number: " + file_number);
-        //buffer.append("Status: " + status);
+        buffer.append("Status: " + status);
         return buffer.toString();
     }
     
