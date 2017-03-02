@@ -249,6 +249,7 @@ public class clients implements Serializable {
         buffer.append("Date of Hire: " + date_of_hire);
         buffer.append("File Number: " + file_number);
         buffer.append("Status: " + status);
+        
         return buffer.toString();
     }
     
