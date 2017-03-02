@@ -57,8 +57,11 @@
 
       <div class="w3-padding-8">
         <label><b>State</b></label>
-        <form:input path="state" cssClass="w3-input w3-border" placeholder="State"  />
+        <form:select path="state" cssClass="w3-input w3-border" cssStyle="w3-select w3-border" placeholder="State" >                    
+                    <form:options items="${clients.statesMap}" />
+                </form:select>
         <form:errors path="state" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
+        
       </div>
 
       <div class="w3-padding-8">
@@ -93,7 +96,9 @@
 
       <div class="w3-padding-8">
         <label><b>Status</b></label>
-        <form:input path="status" cssClass="w3-input w3-border" placeholder="Status"  />
+        <form:select path="status" cssClass="w3-input w3-border" cssStyle="w3-select w3-border" placeholder="Status" >                    
+                    <form:options items="${clients.statesMap}" />
+                </form:select>
         <form:errors path="status" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
       <div class="w3-padding-8">
