@@ -58,7 +58,7 @@
       <div class="w3-padding-8">
         <label><b>State</b></label>
         <form:select path="state" cssClass="w3-input w3-border" cssStyle="w3-select w3-border" placeholder="State" >                    
-                    <form:options items="${clients.statesMap}" />
+                    <form:options items="${clients.statusMap}" />
                 </form:select>
         <form:errors path="state" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
         
