@@ -95,7 +95,7 @@ public class ClientsValidation implements Validator {
         if (!clients.getAddress_2().matches("\\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\\.?")) {
             errors.rejectValue("address_2", "clients.address_2.pattern");
 	}
-        if (clients.getAddress_3() != null && !clients.getAddress_3().matches("\\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\\.?")) {
+        if (clients.getAddress_3().matches("\\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\\.?")) {
             errors.rejectValue("address_3", "clients.address_3.pattern");
         }
         if (!clients.getCity().matches("(?:[A-Z][a-z.-]+[ ]?)+")) {
