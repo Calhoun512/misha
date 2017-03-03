@@ -30,7 +30,6 @@ public class ClientsValidation implements Validator {
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors,"last_name", "clients.last_name.required");
                 ValidationUtils.rejectIfEmpty(errors, "address_1", "clients.address_1.required");
                 ValidationUtils.rejectIfEmpty(errors, "city", "clients.city.required");
-                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "state", "clients.state.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "zip", "clients.zip.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "phone", "clients.phone.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "clients.email.required");
@@ -57,9 +56,6 @@ public class ClientsValidation implements Validator {
                 }
                 if(clients.getCity().length() > 64) {
                     errors.rejectValue("city", "clients.city.length");
-                }
-                if(clients.getState().length() > 45) {
-                    errors.rejectValue("state", "clients.state.length");
                 }
                 if(clients.getZip().length() > 16) {
                    errors.rejectValue("zip", "clients.zip.length");
@@ -100,9 +96,6 @@ public class ClientsValidation implements Validator {
         }
         if (!clients.getCity().matches("(?:[A-Z][a-z.-]+[ ]?)+")) {
             errors.rejectValue("city", "clients.city.pattern");
-        }
-        if (!clients.getState().matches("^(?-i:A[LKSZRAEP]|C[AOT]|D[EC]|F[LM]|G[AU]|HI|I[ADLN]|K[SY]|LA|M[ADEHINOPST]|N[CDEHJMVY]|O[HKR]|P[ARW]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$")) {
-            errors.rejectValue("state", "clients.state.pattern");
         }
         if (clients.getZip() != null && !clients.getZip().matches("^\\b\\d{5}(?:-\\d{4})?\\b$")){
             errors.rejectValue("zip", "clients.zip.pattern");
