@@ -58,12 +58,12 @@ public class ClientsValidation implements Validator {
                 if(clients.getCity().length() > 64) {
                     errors.rejectValue("city", "clients.city.length");
                 }
-                if(clients.getState().length() > 2) {
+                if(clients.getState().length() > 45) {
                     errors.rejectValue("state", "clients.state.length");
                 }
-//                if(clients.getZip().length() > 16) {
-  //                 errors.rejectValue("zip", "clients.zip.length");
-             //   }
+                if(clients.getZip().length() > 16) {
+                   errors.rejectValue("zip", "clients.zip.length");
+                }
                 if(clients.getPhone().length() > 16) {
                     errors.rejectValue("phone", "clients.phone.length");
                 }
@@ -95,7 +95,7 @@ public class ClientsValidation implements Validator {
         if (!clients.getAddress_2().matches("\\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\\.?")) {
             errors.rejectValue("address_2", "clients.address_2.pattern");
 	}
-        if (!clients.getAddress_3().matches("\\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\\.?")) {
+        if (clients.getAddress_3() != null && !clients.getAddress_3().matches("\\d+[ ](?:[A-Za-z0-9.-]+[ ]?)+(?:Avenue|Lane|Road|Boulevard|Drive|Street|Ave|Dr|Rd|Blvd|Ln|St)\\.?")) {
             errors.rejectValue("address_3", "clients.address_3.pattern");
         }
         if (!clients.getCity().matches("(?:[A-Z][a-z.-]+[ ]?)+")) {
