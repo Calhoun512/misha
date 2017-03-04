@@ -79,7 +79,7 @@ public class ClientsValidation implements Validator {
                     errors.rejectValue("status", "clients.status.length");
                 }
         
-        if (!clients.getFirst_name().matches("^[A-Za-z]{2,45}$/")) {
+        if (clients.getFirst_name().matches("^[A-Za-z]{2,45}$/")) {
             errors.rejectValue("first_name","clients.first_name.pattern");
         }
         if (!clients.getLast_name().matches("[^A-Za-z0-9_'-]{2,45}$/")) {
