@@ -27,7 +27,7 @@ public class ClientsValidation implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "first_name", "clients.first_name.required");
-                ValidationUtils.rejectIfEmptyOrWhitespace(errors,"last_name", "clients.last_name.required");
+                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "last_name", "clients.last_name.required");
                 ValidationUtils.rejectIfEmpty(errors, "address_1", "clients.address_1.required");
                 ValidationUtils.rejectIfEmpty(errors, "city", "clients.city.required");
                 ValidationUtils.rejectIfEmptyOrWhitespace(errors, "zip", "clients.zip.required");
@@ -79,7 +79,7 @@ public class ClientsValidation implements Validator {
                     errors.rejectValue("status", "clients.status.length");
                 }
         
-        if (!clients.getFirst_name().matches("^[A-Za-z ]{2,45}$/")) {
+        if (!clients.getFirst_name().matches("^[A-Za-z]{2,45}$/")) {
             errors.rejectValue("first_name","clients.first_name.pattern");
         }
         if (!clients.getLast_name().matches("[^A-Za-z0-9_'-]{2,45}$/")) {
