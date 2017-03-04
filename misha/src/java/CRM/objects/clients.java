@@ -8,11 +8,7 @@ package CRM.objects;
 import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
 
 /**
  *
@@ -20,8 +16,7 @@ import javax.persistence.Id;
  */
 public class clients implements Serializable {
     
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+
     private int client_id;
     private String first_name;
     private String last_name;
