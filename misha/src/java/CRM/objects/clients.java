@@ -106,7 +106,7 @@ public class clients implements Serializable {
     
     public Map<String, String> getStatusMap(){
         this.statusMap = new LinkedHashMap<String, String>();
-        this.statesMap.put("Select one", "Select one");
+        this.statusMap.put("Select one", "Select one");
         this.statusMap.put("Active", "Active");
         this.statusMap.put("Inactive", "Inactive");
         this.statusMap.put("prospect", "Prospect");
