@@ -35,6 +35,7 @@ public class clients implements Serializable {
     
     public Map<String, String> getStatesMap() {
         this.statesMap = new LinkedHashMap<String, String>();
+        this.statesMap.put("Select one", "Select one");
         this.statesMap.put("AL - Alabama", "AL - Alabama");
         this.statesMap.put("AK - Alaska", "AK - Alaska");
         this.statesMap.put("AZ - Arizona", "AZ - Arizona");
@@ -105,6 +106,7 @@ public class clients implements Serializable {
     
     public Map<String, String> getStatusMap(){
         this.statusMap = new LinkedHashMap<String, String>();
+        this.statesMap.put("Select one", "Select one");
         this.statusMap.put("Active", "Active");
         this.statusMap.put("Inactive", "Inactive");
         this.statusMap.put("prospect", "Prospect");
