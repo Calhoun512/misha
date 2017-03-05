@@ -23,6 +23,8 @@ public class interactions implements Serializable {
     private String phone;
     private String notes;
     private Map<String, String> contact_type;
+    private String contact_date;
+
     
     public Map<String, String> getContact_type() {
         contact_type = new LinkedHashMap<>();
@@ -96,6 +98,14 @@ public class interactions implements Serializable {
     
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+    
+    public String getContact_date() {
+        return contact_date;
+    }
+
+    public void setContact_date(String contact_date) {
+        this.contact_date = contact_date;
     }
     
     public String toString() {
