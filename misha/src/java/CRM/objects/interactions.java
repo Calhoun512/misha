@@ -24,7 +24,8 @@ public class interactions implements Serializable {
     private String notes;
     private Map<String, String> contact_type;
     private String contact_date;
-    private String client_id;
+    private int client_id;
+
 
 
 
@@ -111,11 +112,11 @@ public class interactions implements Serializable {
         this.contact_date = contact_date;
     }
     
-    public String getClient_id() {
+        public int getClient_id() {
         return client_id;
     }
 
-    public void setClient_id(String client_id) {
+    public void setClient_id(int client_id) {
         this.client_id = client_id;
     }
     
