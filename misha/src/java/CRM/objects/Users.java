@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
  * @author calho
  */
 public class Users implements Serializable {
-    private int user_id;
+    
     private String username;
     private String password;
     private List<String> roles;
