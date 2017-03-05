@@ -26,10 +26,7 @@ public class interactions implements Serializable {
     private String contact_date;
     private int client_id;
 
-
-
-
-    
+   
     public Map<String, String> getContact_type() {
         contact_type = new LinkedHashMap<>();
         contact_type.put("Direct", "Direct");
@@ -130,7 +127,11 @@ public class interactions implements Serializable {
         buffer.append("Email: " + email);
         buffer.append("Phone: " + phone);
         buffer.append("Notes: " + notes);
+        buffer.append("Contact Date: " + contact_date);
+        buffer.append("Client ID: " + client_id);
         return buffer.toString();
     }
+
+
     
 }
