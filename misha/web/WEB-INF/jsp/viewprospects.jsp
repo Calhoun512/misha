@@ -3,6 +3,8 @@
     Created on : Feb 1, 2017, 10:26:56 PM
     Author     : calho
 --%>
+
+<%--
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 
@@ -80,3 +82,5 @@
   </div>
 
 <%@ include file="theme/footer.jsp" %>
+
+--%>

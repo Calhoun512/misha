@@ -66,7 +66,10 @@ public class InteractionsDAO {
     }
     
     public List<interactions> getInteractionsByPage(int start, int total){
-       String sql = "SELECT * FROM interactions LIMIT " + (start - 1) + "," + total;
+       String sql = "SELECT interactions.interaction_id, interactions.first_name, interactions.last_name, interactions.notes " + 
+               "FROM Interactions AS interactions " +
+               "INNER JOIN clients AS clients ON " +
+               "LIMIT "(start - 1) + "," + total;
        return template.query(sql,new RowMapper<interactions>(){
            public interactions mapRow(ResultSet rs,int row) throws SQLException{
                interactions i = new interactions();
