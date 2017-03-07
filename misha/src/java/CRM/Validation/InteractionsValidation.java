@@ -28,10 +28,10 @@ public class InteractionsValidation implements Validator {
         
         @Override
         public void validate(Object target, Errors errors) {
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "First Name", "interactions.first_name.required");
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Last Name", "interactions.last_name.required");
+            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "first_name", "interactions.first_name.required");
+            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "last_name", "interactions.last_name.required");
             ValidationUtils.rejectIfEmpty(errors, "status", "interactions.status.required");
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "Method of Contact", "interactions.method_of_contact.required");
+            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "method_of_contact", "interactions.method_of_contact.required");
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "interactions.email.required");
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "phone", "interactions.phone.required");
             ValidationUtils.rejectIfEmpty(errors, "notes", "interactions.notes.required");
