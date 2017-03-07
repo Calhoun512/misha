@@ -66,40 +66,75 @@ public class ClientController {
         return new ModelAndView("redirect:/clients/viewclients");
     }
     
-    @RequestMapping("/clients/viewclients")
-    public ModelAndView viewclients(HttpServletRequest request){
-        List<clients> list = dao.getClientsList();
-        return this.viewclients(1, request);
+     @RequestMapping("/clients/viewclienst")
+    public ModelAndView viewclient(HttpServletRequest request) {
+
+        return this.viewclient(1, request);
     }
-    
-    @RequestMapping("/clients/viewclients{pageid}")
-    public ModelAndView viewclients(@PathVariable int pageid, HttpServletRequest request){
+
+    @RequestMapping("/clients/viewclients/{pageid}")
+    public ModelAndView viewclient(@PathVariable int pageid, HttpServletRequest request) {
         int total = 25;
         int start = 1;
-        int count = dao.getClientCount();
-        
-        if(pageid != 1) {
-            start = (pageid-1) * total + 1;
+
+        if (pageid != 1) {
+            start = (pageid - 1) * total + 1;
         }
-        
+
         List<clients> list = dao.getClientsByPage(start, total);
-        
+
         HashMap<String, Object> context = new HashMap<String, Object>();
-        context.put("pages", Math.ceil((float)count/(float)total));
-        
-        context.put("pageid", pageid);
-        
-        Message msg = (Message)request.getSession().getAttribute("message");
-        
+        context.put("list", list);
+
+        int count = dao.getClientCount();
+        context.put("pages", Math.ceil((float) count / (float) total));
+
+        context.put("page", pageid);
+
+        Message msg = (Message) request.getSession().getAttribute("message");
+
         if (msg != null) {
             context.put("message", msg);
             request.getSession().removeAttribute("message");
-            
         }
-        
-        return new ModelAndView("viewclients", context);
+
+        return new ModelAndView("viewclient", context);
     }
     
+//    @RequestMapping("/clients/viewclients")
+//    public ModelAndView viewclients(HttpServletRequest request){
+//        List<clients> list = dao.getClientsList();
+//        return this.viewclients(1, request);
+//    }
+//    
+//    @RequestMapping("/clients/viewclients{pageid}")
+//    public ModelAndView viewclients(@PathVariable int pageid, HttpServletRequest request){
+//        int total = 25;
+//        int start = 1;
+//        int count = dao.getClientCount();
+//        
+//        if(pageid != 1) {
+//            start = (pageid-1) * total + 1;
+//        }
+//        
+//        List<clients> list = dao.getClientsByPage(start, total);
+//        
+//        HashMap<String, Object> context = new HashMap<String, Object>();
+//        context.put("pages", Math.ceil((float)count/(float)total));
+//        
+//        context.put("pageid", pageid);
+//        
+//        Message msg = (Message)request.getSession().getAttribute("message");
+//        
+//        if (msg != null) {
+//            context.put("message", msg);
+//            request.getSession().removeAttribute("message");
+//            
+//        }
+//        
+//        return new ModelAndView("viewclients", context);
+//    }
+//    
     @RequestMapping(value = "/clients/editclients/{client_id}")
     public ModelAndView edit(@PathVariable int client_id){
         clients clients = dao.getClientById(client_id);
