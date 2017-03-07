@@ -37,6 +37,8 @@
       <th>Email</th>
       <th>Phone</th>
       <th>Notes</th>
+      <th>Contact Date</th>
+      <th>Client ID</th>
       <th>Action</th>
     </tr>  
 <t
@@ -49,7 +51,8 @@
         <td>${interactions.method_of_contact}</td>
         <td>${interactions.email}</td>
         <td>${interactions.phone}</td>
-        <td>${interactions.notes}</td>  
+        <td>${interactions.notes}</td>
+        <td>${interactions.client_id}</
         <td>
           <a href="<c:url value="/interactions/editinteraction/${interactions.id}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
           <a href="<c:url value="/interactions/deleteinteraction/${interactions.id}" />"><button class="w3-btn w3-round w3-red">Delete</button></a>
