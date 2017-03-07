@@ -69,7 +69,7 @@ public class InteractionsDAO {
     public List<interactions> getInteractionsByPage(int start, int total){
        String sql = "SELECT interactions.interaction_id, interactions.client_id, interactions.contact_date, interactions.first_name, interactions.last_name, interactions.notes, clients.client_id  " + 
                "FROM Interactions AS interactions " +
-               "INNER JOIN clients AS client ON clients.client_id = interactions.client_id " +
+               "INNER JOIN clients AS clients ON clients.client_id = interactions.client_id " +
                "ORDER BY clients.last_name, interactions.contact_date " +
                "LIMIT " + (start - 1) + "," + total; 
        return template.query(sql,new RowMapper<interactions>(){
