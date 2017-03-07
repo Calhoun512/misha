@@ -102,7 +102,7 @@ public class ClientController {
     @RequestMapping(value = "/clients/editclients/{client_id}")
     public ModelAndView edit(@PathVariable int client_id){
         clients clients = dao.getClientById(client_id);
-        return new ModelAndView("clienteditform","clients",clients);
+        return new ModelAndView("clientseditform","clients",clients);
     }
     
     @RequestMapping(value = "/clients/editsave", method = RequestMethod.POST)
