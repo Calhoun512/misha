@@ -34,7 +34,10 @@
 
       <div class="w3-padding-8">
         <label><b>Status</b></label>
-        <form:input path="status" cssClass="w3-input w3-border"  />
+        <form:select path="status" cssClass="w3-input w3-border"  >
+                     <form:option value="">Status</form:option>
+            <form:options items="${interactions.statusMap}" />
+        </form:select>
         <form:errors path="status" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
 

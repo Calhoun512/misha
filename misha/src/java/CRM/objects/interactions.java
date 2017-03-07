@@ -25,6 +25,16 @@ public class interactions implements Serializable {
     private Map<String, String> contact_type;
     private String contact_date;
     private int client_id;
+    private Map<String, String> statusMap;
+    
+        public Map<String, String> getStatusMap(){
+        this.statusMap = new LinkedHashMap<String, String>();
+        this.statusMap.put("Active", "Active");
+        this.statusMap.put("Inactive", "Inactive");
+        this.statusMap.put("prospect", "Prospect");
+        
+        return statusMap;
+    }
 
    
     public Map<String, String> getContact_type() {
@@ -109,7 +119,7 @@ public class interactions implements Serializable {
         this.contact_date = contact_date;
     }
     
-        public int getClient_id() {
+    public int getClient_id() {
         return client_id;
     }
 
