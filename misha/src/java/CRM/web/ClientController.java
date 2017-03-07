@@ -86,7 +86,7 @@ public class ClientController {
         HashMap<String, Object> context = new HashMap<String, Object>();
         context.put("pages", Math.ceil((float)count/(float)total));
         
-        context.put("list", list);
+        context.put("pageid", pageid);
         
         Message msg = (Message)request.getSession().getAttribute("message");
         
