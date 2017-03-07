@@ -68,6 +68,7 @@ public class ClientController {
     
     @RequestMapping("/clients/viewclients")
     public ModelAndView viewclients(HttpServletRequest request){
+        List<clients> list = dao.getClientsList();
         return this.viewclients(1, request);
     }
     
