@@ -22,13 +22,13 @@
       <form:form method="post" action="save" cssClass="w3-container" commandName="interactions">
       <div class="w3-padding-8">
         <label><b>First Name</b></label>
-        <form:input path="first_name" cssClass="w3-input w3-border"  />
+        <form:input path="first_name" cssClass="w3-input w3-border" placeholder="First Name" />
         <form:errors path="first_name" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
  
       <div class="w3-padding-8">
         <label><b>Last Name</b></label>
-        <form:input path="last_name" cssClass="w3-input w3-border"  />
+        <form:input path="last_name" cssClass="w3-input w3-border" placeholder="Last Name" />
         <form:errors path="last_name" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>    
 
@@ -52,21 +52,33 @@
 
       <div class="w3-padding-8">
         <label><b>Email</b></label>
-        <form:input path="email" cssClass="w3-input w3-border"  />
+        <form:input path="email" cssClass="w3-input w3-border" placeholder="Email"  />
         <form:errors path="email" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
 
       <div class="w3-padding-8">
         <label><b>Phone</b></label>
-        <form:input path="phone" cssClass="w3-input w3-border"  />
+        <form:input path="phone" cssClass="w3-input w3-border" placeholder="Phone"  />
         <form:errors path="phone" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
 
       <div class="w3-padding-8">
         <label><b>Notes</b></label>
-        <form:input path="notes" cssClass="w3-input w3-border"  />
+        <form:input path="notes" cssClass="w3-input w3-border" placeholder="Notes"  />
         <form:errors path="notes" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>
+      
+      <div class="w3-padding-8">
+        <label><b>Contact Date</b></label>
+        <form:input path="contact_date" cssClass="w3-input w3-border" placeholder="Contact Date" />
+        <form:errors path="contact_date" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
+      </div>    
+      
+      <div class="w3-padding-8">
+        <label><b>Client ID</b></label>
+        <form:input path="client_id" cssClass="w3-input w3-border" placeholder="Client ID"  />
+        <form:errors path="client_id" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
+      </div>    
       <div class="w3-padding-8">
         <button type="submit" class="w3-btn w3-padding w3-blue" style="width:120px">Save</button>
       </div>
