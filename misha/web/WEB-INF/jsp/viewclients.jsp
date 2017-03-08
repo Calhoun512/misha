@@ -63,7 +63,7 @@
         <td>${clients.file_number}</td>
         <td>${clients.status}</td>   
         <td>
-          <a href="<c:url value="/clents/editclient/${clients.client_id}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
+          <a href="<c:url value="/clients/editclient/${clients.client_id}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
           <a href="<c:url value="/clients/deleteclient/${clients.client_id}" />"><button class="w3-btn w3-round w3-red" onclick="return confirm('Are you sure you want to delete this user/client/interaction?');">Delete</button></a>
           <a href="<c:url value="/clients/interactionsform/${interactions.interaction_id}"/>"><button class="w3-btn w3-round w3-green">Add Interaction</button></a>
         </td>  
