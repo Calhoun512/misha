@@ -27,7 +27,6 @@
 
   <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">  
     <tr>
-      <th>Title</th>
       <th>Client ID</th>
       <th>First Name</th>
       <th>Last Name</th>
@@ -48,7 +47,6 @@
 
     <c:forEach var="clients" items="${list}">   
       <tr>  
-        <td>${clients.title}</td>
         <td>${clients.first_name}</td>
         <td>${clients.last_name}</td>
         <td>${clients.address_1}</td>
