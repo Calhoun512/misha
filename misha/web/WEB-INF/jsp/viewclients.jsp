@@ -46,7 +46,8 @@
     </tr>  
 
     <c:forEach var="clients" items="${list}">   
-      <tr>  
+      <tr>
+        <td>${clients.client_id}</td>
         <td>${clients.first_name}</td>
         <td>${clients.last_name}</td>
         <td>${clients.address_1}</td>
