@@ -98,7 +98,7 @@ public class ClientController {
             request.getSession().removeAttribute("message");
         }
 
-        return new ModelAndView("viewclient", context);
+        return new ModelAndView("viewclients", context);
     }
     
 //    @RequestMapping("/clients/viewclients")

@@ -39,35 +39,35 @@ public class InteractionsValidation implements Validator {
     
     interactions interactions = (interactions)target;
         if(interactions.getFirst_name().length() > 45) {
-            errors.rejectValue("First Name", "interactions.first_name.length");
+            errors.rejectValue("first_name", "interactions.first_name.length");
         }
         
         if(interactions.getLast_name().length() > 45) {
-            errors.rejectValue("Last Name", "interactions.last_name.length");
+            errors.rejectValue("last_name", "interactions.last_name.length");
         }
         if(interactions.getStatus().length() > 45) {
-            errors.rejectValue("Status", "interactions.status.length");
+            errors.rejectValue("status", "interactions.status.length");
         }
         if(interactions.getMethod_of_contact().length() > 45) {
-            errors.rejectValue("Method of Contact", "interactions.method_of_contact.length");
+            errors.rejectValue("method_of_contact", "interactions.method_of_contact.length");
         }
         if(interactions.getEmail().length() > 64) {
-            errors.rejectValue("Email", "interactions.email.length");
+            errors.rejectValue("email", "interactions.email.length");
         }
         if(interactions.getPhone().length() > 16) {
-            errors.rejectValue("Phone", "interactions.phone.length");
+            errors.rejectValue("phone", "interactions.phone.length");
         }
-    if(!interactions.getFirst_name().matches("^[A-Za-z ]{2,45}$/")) {
-        errors.rejectValue("First Name", "interactions.first_name.pattern");
+    if(interactions.getFirst_name() != null && !interactions.getFirst_name().matches("^[A-Za-z ]{2,45}$/")) {
+        errors.rejectValue("first_name", "interactions.first_name.pattern");
     }
-    if(!interactions.getLast_name().matches("^[A-Za-z ]{2,45}$/")) {
-        errors.rejectValue("Last Name", "interactions.last_name.pattern");
+    if(interactions.getLast_name() != null && !interactions.getLast_name().matches("^[A-Za-z ]{2,45}$/")) {
+        errors.rejectValue("last_name", "interactions.last_name.pattern");
     }
-    if(!interactions.getEmail().matches("^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])$")) {
-        errors.rejectValue("Email", "interactions.email.pattern");
+    if(interactions.getEmail() != null && !interactions.getEmail().matches("^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])$")) {
+        errors.rejectValue("email", "interactions.email.pattern");
     }
     if(!interactions.getPhone().matches("^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?$")) {
-        errors.rejectValue("Phone", "interactions.phone.pattern");
+        errors.rejectValue("phone", "interactions.phone.pattern");
     }
 }
         

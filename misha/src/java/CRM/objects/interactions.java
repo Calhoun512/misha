@@ -138,7 +138,7 @@ public class interactions implements Serializable {
         buffer.append("Phone: " + phone);
         buffer.append("Notes: " + notes);
         buffer.append("Contact Date: " + contact_date);
-        buffer.append("Client ID: " + client_id);
+        buffer.append("Client ID: " + this.client_id + ";");
         return buffer.toString();
     }
 
