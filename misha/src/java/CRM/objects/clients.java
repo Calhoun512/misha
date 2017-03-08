@@ -117,12 +117,12 @@ public class clients implements Serializable {
     }
     
 
-    public int getId() {
+    public int getClient_id() {
         return client_id;
     }
 
-    public void setId(int id) {
-        this.client_id = id;
+    public void setClient_id(int client_id) {
+        this.client_id = client_id;
     }
 
     public String getFirst_name() {
