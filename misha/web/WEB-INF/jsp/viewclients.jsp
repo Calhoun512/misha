@@ -5,7 +5,6 @@
 --%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
-
 <%@ include file="theme/header.jsp" %>
 
   <header class="w3-container" style="padding-top:22px">
@@ -47,7 +46,7 @@
       <th>Action</th>
     </tr>  
 
-    <c:forEach var="list" items="${clients}">   
+    <c:forEach var="clients" items="${list}">   
       <tr>  
         <td>${clients.title}</td>
         <td>${clients.first_name}</td>
