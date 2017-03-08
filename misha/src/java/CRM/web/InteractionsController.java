@@ -84,8 +84,11 @@ public class InteractionsController {
         }
         
         List<interactions> list = dao.getInteractionsByPage(start, total);
-        
+       
         HashMap<String, Object> context = new HashMap<String, Object>();
+        context.put("list", list);
+        
+        
         context.put("pages", Math.ceil((float)count/(float)total));
         
         context.put("page", pageid);
