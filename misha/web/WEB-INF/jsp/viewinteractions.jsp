@@ -52,10 +52,10 @@
         <td>${interactions.email}</td>
         <td>${interactions.phone}</td>
         <td>${interactions.notes}</td>
-        <td>${interactions.client_id}</
+        <td>${interactions.client_id}</td>
         <td>
-          <a href="<c:url value="/interactions/editinteraction/${interactions.interaction_id}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
-          <a href="<c:url value="/interactions/deleteinteraction/${interactions.interaction_id}" />"><button class="w3-btn w3-round w3-red">Delete</button></a>
+          <a href="<c:url value="/interactions/editinteractions/${interactions.interaction_id}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
+          <a href="<c:url value="/interactions/deleteinteractions/${interactions.interaction_id}" />"><button class="w3-btn w3-round w3-red">Delete</button></a>
         </td>  
       </tr>  
     </c:forEach>  
