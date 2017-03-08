@@ -27,8 +27,8 @@ public class InteractionsDAO {
     }
     
     public int save (interactions interactions){
-        String sql = "INSERT INTO INTERACTIONS (first_name, last_name, status, method_of_contact, email, phone, notes, contact_date, client_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        Object[] values = {interactions.getFirst_name(), interactions.getLast_name(), interactions.getStatus(), interactions.getMethod_of_contact(), interactions.getEmail(), interactions.getPhone(), interactions.getNotes(), interactions.getContact_date(), interactions.getClient_id()};
+        String sql = "INSERT INTO INTERACTIONS (first_name, last_name, status, method_of_contact, email, phone, notes, contact_date) values (?, ?, ?, ?, ?, ?, ?, ?)";
+        Object[] values = {interactions.getFirst_name(), interactions.getLast_name(), interactions.getStatus(), interactions.getMethod_of_contact(), interactions.getEmail(), interactions.getPhone(), interactions.getNotes(), interactions.getContact_date()};
         return template.update(sql, values);
                 
         }
