@@ -43,7 +43,6 @@ public class InteractionsController {
     
     @RequestMapping("/interactions/interactionsform")
     public ModelAndView showform(){
-        interactions interaction = new interactions();
         return new ModelAndView("interactionsform","interactions", new interactions ());
     }
     
