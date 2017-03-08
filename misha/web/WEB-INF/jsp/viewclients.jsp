@@ -38,7 +38,7 @@
       <th>Zip</th>
       <th>Phone</th>
       <th>Fax</th>
-      <th>Email</th
+      <th>Email</th>
       <th>Date Of Hire</th>
       <th>File Number</th>
       <th>Status</th>      
