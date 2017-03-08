@@ -44,7 +44,7 @@
 <t
     <c:forEach var="interactions" items="${list}">   
       <tr>  
-
+        <td>${interactions.interaction_id}</td>
         <td>${interactions.first_name}</td>
         <td>${interactions.last_name}</td>
         <td>${interactions.status}</td>
