@@ -44,7 +44,7 @@ public class InteractionsController {
     @RequestMapping("/interactions/interactionsform")
     public ModelAndView showform(){
         interactions interaction = new interactions();
-        return new ModelAndView("interactionsform","interactions", interaction);
+        return new ModelAndView("interactionsform","interactions", new interactions ());
     }
     
     @RequestMapping(value = "/interactions/save", method =  RequestMethod.POST)
