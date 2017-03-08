@@ -46,4 +46,8 @@
   <bean id="users-dao" class="CRM.repository.UsersDAO">  
     <property name="template" ref="jt"></property>  
   </bean>  
+  
+  <bean id="client-controller" class="CRM.web.ClientController">
+      <property name="template" ref="jt"></property>
+  </bean>
 </beans>
