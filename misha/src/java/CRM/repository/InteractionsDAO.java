@@ -48,6 +48,7 @@ public class InteractionsDAO {
     
     public List<interactions> getInteractionsList(){
         return template.query("SELECT * FROM interactions", new RowMapper<interactions>(){
+            @Override
             public interactions mapRow(ResultSet rs, int row) throws SQLException{
                 interactions i = new interactions();
                 i.setInteraction_id(rs.getInt("interaction_id"));
