@@ -42,7 +42,7 @@
       <th>Date Of Hire</th>
       <th>File Number</th>
       <th>Status</th>      
-      <th>Action</th>
+
     </tr>  
 
     <c:forEach var="clients" items="${list}">   
