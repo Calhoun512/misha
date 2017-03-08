@@ -52,6 +52,7 @@ public class ClientsDAO {
     
     public List<clients> getClientsList(){
         return template.query("SELECT * FROM clients", new RowMapper<clients>(){
+            @Override
             public clients mapRow(ResultSet rs, int row) throws SQLException{
                 clients c = new clients();
                 c.setId(rs.getInt("client_id"));
