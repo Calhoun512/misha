@@ -28,7 +28,7 @@
 
   <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">  
     <tr>
-      <th>Title</th>
+
       <th>Interaction ID</th>
       <th>First Name</th>
       <th>Last Name</th>
