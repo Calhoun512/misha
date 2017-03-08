@@ -27,7 +27,7 @@
 
   <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">  
     <tr>
-      <%-- <th>Client ID</th> --%>
+      <th>Client ID</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Address 1</th>
@@ -64,7 +64,7 @@
         <td>
           <a href="<c:url value="/clents/editclient/${clients.client_id}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
           <a href="<c:url value="/clients/deleteclient/${clients.client_id}" />"><button class="w3-btn w3-round w3-red" onclick="return confirm('Are you sure you want to delete this user/client/interaction?');">Delete</button></a>
-          <a href="<c:url value="/interactions/interactionsform/${clients.client_id}"/>"><button class="w3-btn w3-round w3-green">Add Interaction</button></a>
+          <a href="<c:url value="/clients/interactionsform/${interactions.interaction_id}"/>"><button class="w3-btn w3-round w3-green">Add Interaction</button></a>
         </td>  
       </tr>  
     </c:forEach>  
