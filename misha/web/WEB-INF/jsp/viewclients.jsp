@@ -27,7 +27,7 @@
 
   <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">  
     <tr>
-      <th>Client ID</th>
+      <%-- <th>Client ID</th> --%>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Address 1</th>
