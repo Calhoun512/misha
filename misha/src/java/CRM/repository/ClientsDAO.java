@@ -55,7 +55,7 @@ public class ClientsDAO {
             @Override
             public clients mapRow(ResultSet rs, int row) throws SQLException{
                 clients c = new clients();
-                c.setId(rs.getInt("client_id"));
+                c.setClient_id(rs.getInt("client_id"));
                 c.setFirst_name(rs.getString("first_name"));
                 c.setLast_name(rs.getString("last_name"));
     
@@ -75,7 +75,7 @@ public class ClientsDAO {
        return template.query(sql,new RowMapper<clients>(){
            public clients mapRow(ResultSet rs,int row) throws SQLException{
                clients c = new clients();
-                c.setId(rs.getInt(1));
+                c.setClient_id(rs.getInt(1));
                 c.setFirst_name(rs.getString(2));
                 c.setLast_name(rs.getString(3));
                 c.setAddress_1(rs.getString(4));
