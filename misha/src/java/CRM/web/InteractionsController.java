@@ -90,7 +90,7 @@ public class InteractionsController {
         int count = dao.getInteractionsCount();
         context.put("pages", Math.ceil((float)count/(float)total));
         
-        context.put("pages", pageid);
+        context.put("page", pageid);
         
         Message msg = (Message)request.getSession().getAttribute("message");
         
