@@ -52,6 +52,7 @@
         <td>${interactions.email}</td>
         <td>${interactions.phone}</td>
         <td>${interactions.notes}</td>
+        <td>${interactions.contact_date}</td>
         <td>${interactions.client_id}</td>
         <td>
           <a href="<c:url value="/interactions/editinteractions/${interactions.interaction_id}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
