@@ -76,7 +76,10 @@
       
       <div class="w3-padding-8">
         <label><b>Client ID</b></label>
-        <form:input path="client_id" cssClass="w3-input w3-border" placeholder="Client ID"  />
+        <form:select path="client_id" cssClass="w3-input w3-border" placeholder="Client ID"  >
+        <form:option value="-1"> Select Client</form:option>
+        <form:options items="${interactions.clients}"></form:options>
+        </form:select>     
         <form:errors path="client_id" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
       </div>    
       <div class="w3-padding-8">
