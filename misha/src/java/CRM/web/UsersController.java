@@ -38,15 +38,15 @@ public class UsersController {
     
     private static final Logger logger = Logger.getLogger(UsersController.class.getName());
     
-    @RequestMapping("/users/userform")
+    @RequestMapping("/Users/userform")
     public ModelAndView showform(){
         Users users = new Users();
         return new ModelAndView("userform","users",users);
     }
     
-    @RequestMapping(value = "/users/save", method = RequestMethod.POST)
-    public ModelAndView save(@ModelAttribute("User") Users users, HttpServletRequest request){
-        int r = dao.save(users);
+    @RequestMapping(value = "/Users/save", method = RequestMethod.POST)
+    public ModelAndView save(@ModelAttribute("User") Users Users, HttpServletRequest request){
+        int r = dao.save(Users);
         
         Message msg = null;
         if (r == 1) {
@@ -58,7 +58,7 @@ public class UsersController {
         
         request.getSession().setAttribute("message", msg);
         
-        return new ModelAndView("redirect:/users/viewusers");
+        return new ModelAndView("redirect:/Users/viewusers");
     }
     
     @RequestMapping("/Users/viewusers/{pageid}")
@@ -90,15 +90,15 @@ public class UsersController {
         return new ModelAndView("viewusers", context);
     }
     
-    @RequestMapping(value = "/Users/editUser/{user_id}")
+    @RequestMapping(value = "/Users/editUser/{username}")
     public ModelAndView edit(@PathVariable String username){
         Users user = dao.getUsersByUsername(username);
         return new ModelAndView("usereditform", "command", user);
     }
     
-    @RequestMapping(value = "/users/editsave", method = RequestMethod.POST)
-    public ModelAndView editsave(@ModelAttribute("users") Users users, HttpServletRequest request){
-        int r = dao.update(users);
+    @RequestMapping(value = "/Users/editsave", method = RequestMethod.POST)
+    public ModelAndView editsave(@ModelAttribute("Users") Users Users, HttpServletRequest request){
+        int r = dao.update(Users);
         
         Message msg = null;
         if(r == 1) {
@@ -113,7 +113,7 @@ public class UsersController {
         return new ModelAndView("redirect:/home");
     }
     
-    @RequestMapping(value = "/users/deleteuser/{user_id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/Users/deleteuser/{user_id}", method = RequestMethod.GET)
     public ModelAndView delete(@ModelAttribute ("Users") Users Users, HttpServletRequest request){
         int r = dao.delete(Users);
         
@@ -130,7 +130,7 @@ public class UsersController {
         return new ModelAndView("redirect:/home");
     }
     
-    @InitBinder("users")
+    @InitBinder("Users")
     public void initBinder(WebDataBinder webDataBinder){
         webDataBinder.setValidator(userValidation);
     }
