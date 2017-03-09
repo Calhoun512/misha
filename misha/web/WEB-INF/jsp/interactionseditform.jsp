@@ -62,7 +62,7 @@
                    <label><b>Client ID</b></label>
                 <form:select path="client_id" cssClass="w3-input w3-border"  >
                 <form:option value="-1"> Select Client</form:option>
-                <form:options items="${interactions.clients}"></form:options>
+                <form:options items="${interactions.clientsMap}"></form:options>
                  </form:select>                   
                </div>
            </div>
