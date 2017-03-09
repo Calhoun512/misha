@@ -20,7 +20,7 @@
        </div>
 
        <form:form method="POST" action="/misha/interactions/editsave" cssClass="w3-container" commandName="interactions">
-           <form:hidden path="interactionId"  />
+           <form:hidden path="interaction_id"  />
 
            <div class="w3-padding-8">
                <label><b>First Name</b></label>
