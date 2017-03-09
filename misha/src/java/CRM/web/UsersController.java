@@ -40,8 +40,8 @@ public class UsersController {
     
     @RequestMapping("/Users/userform")
     public ModelAndView showform(){
-        Users users = new Users();
-        return new ModelAndView("userform","users",users);
+        Users Users = new Users();
+        return new ModelAndView("userform","Users", Users);
     }
     
     @RequestMapping(value = "/Users/save", method = RequestMethod.POST)

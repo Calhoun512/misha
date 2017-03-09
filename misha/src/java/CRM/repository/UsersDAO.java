@@ -27,22 +27,22 @@ public class UsersDAO {
         this.template = template;
     }
     
-    public int save(Users users){
-        String sql = "INSERT INTO users (username, password) values(?, md5(?))";
-        Object[] values = {users.getUsername(), users.getPassword()};
+    public int save(Users Users){
+        String sql = "INSERT INTO Users (username, password) values(?, md5(?))";
+        Object[] values = {Users.getUsername(), Users.getPassword()};
         int r = template.update(sql,values);
         sql = "INSERT INTO user_roles (username, role) VALUES (?, ?)";
-        for (String role: users.getRoles()) {
-            Object[] role_values = {users.getUsername(), role};
+        for (String role: Users.getRoles()) {
+            Object[] role_values = {Users.getUsername(), role};
             template.update(sql, role_values);
             
         }
         return r;
     }
 
-    public Users getUsersByUsername(String Username) {
-       String sql = "SELECT *  FROM users WHERE username = ?";
-       return template.queryForObject(sql, new Object[]{Username}, new BeanPropertyRowMapper<Users>(Users.class));
+    public Users getUsersByUsername(String username) {
+       String sql = "SELECT *  FROM Users WHERE username = ?";
+       return template.queryForObject(sql, new Object[]{username}, new BeanPropertyRowMapper<Users>(Users.class));
         
     }
 
