@@ -19,8 +19,11 @@ public class Users implements Serializable {
     
     private String username;
     private String password;
+    private String name;
     private List<String> roles;
     private Map<String, String> rolemap;
+    private int enabled;
+    private List<String> rolelist;
 
     
     public Users(){
@@ -56,6 +59,31 @@ public class Users implements Serializable {
     
     public void setRoles(List<String> roles){
         this.roles = roles;
+    }
+
+    public List<String> getRolelist() {
+        return rolelist;
+    }
+
+
+    public void setRolelist(List<String> rolelist) {
+        this.rolelist = rolelist;
+    }
+    public Object getEnabled() {
+        return enabled;
+    }
+
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
+
+    public void setName(String string) {
+        this.name = name;
+    }
+    
+    public String getName(){
+        return name;
     }
 }
 
