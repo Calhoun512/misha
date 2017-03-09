@@ -69,6 +69,7 @@ public class Users implements Serializable {
     public void setRolelist(List<String> rolelist) {
         this.rolelist = rolelist;
     }
+    
     public Object getEnabled() {
         return enabled;
     }
