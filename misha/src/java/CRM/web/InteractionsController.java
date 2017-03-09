@@ -41,9 +41,11 @@ public class InteractionsController {
     
     private static final Logger logger = Logger.getLogger(InteractionsController.class.getName());
     
-    @RequestMapping("/interactions/interactionsform")
+    @RequestMapping(value="/interactions/interactionsform", method=RequestMethod.GET)
     public ModelAndView showform(){
-        return new ModelAndView("interactionsform","interactions", new interactions ());
+        interactions interactions = new interactions();
+        interactions.setClientsMap(dao.getClientsMap());
+        return new ModelAndView("interactionsform","interactions", interactions);
     }
     
     @RequestMapping(value = "/interactions/save", method =  RequestMethod.POST)

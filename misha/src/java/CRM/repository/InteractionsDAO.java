@@ -15,6 +15,8 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.jdbc.core.RowMapper;
 
 import CRM.objects.interactions;
+import java.util.LinkedHashMap;
+import java.util.Map;
 /**
  *
  * @author calho
@@ -107,6 +109,17 @@ public class InteractionsDAO {
             return rs.getInt("rowcount");
         }
         return 1;
+    }
+    public Map<Integer, String> getClientsMap() {
+       Map<Integer, String> clients = new LinkedHashMap<Integer, String>();
+       String sql = "SELECT client_id, first_name,last_name FROM clients";
+
+       SqlRowSet srs = template.queryForRowSet(sql);
+
+       while (srs.next()) {
+           clients.put(srs.getInt("client_id"), srs.getString("first_name") + " " + srs.getString("last_name"));
+       }
+       return clients;
     }
 }
 
