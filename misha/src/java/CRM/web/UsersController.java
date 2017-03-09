@@ -61,6 +61,10 @@ public class UsersController {
         return new ModelAndView("redirect:/users/viewusers");
     }
     
+    @RequestMapping("/users/viewusers")
+    public ModelAndView viewusers(HttpServletRequest request){
+        return this.viewUsers(1, request);
+    }
     @RequestMapping("/users/viewusers/{pageid}")
     public ModelAndView viewUsers(@PathVariable int pageid, HttpServletRequest request){
         int total = 25;
