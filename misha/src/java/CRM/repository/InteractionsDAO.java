@@ -76,21 +76,21 @@ public class InteractionsDAO {
        return template.query(sql,new RowMapper<interactions>(){
            public interactions mapRow(ResultSet rs,int row) throws SQLException{
                interactions i = new interactions();
-               i.setInteraction_id(rs.getInt(1));
-               i.setFirst_name(rs.getString(2));
-               i.setLast_name(rs.getString(3));
-               i.setStatus(rs.getString(4));
-               i.setMethod_of_contact(rs.getString(5));
-               i.setEmail(rs.getString(6));
-               i.setPhone(rs.getString(7));
-               i.setNotes(rs.getString(8));
-               i.setContact_date(rs.getString(9));
-               i.setClient_id(rs.getInt(10));
+               i.setInteraction_id(rs.getInt("interaction_id"));
+               i.setFirst_name(rs.getString("first_name"));
+               i.setLast_name(rs.getString("last_name"));
+               i.setStatus(rs.getString("status"));
+               i.setMethod_of_contact(rs.getString("method_of_contact"));
+               i.setEmail(rs.getString("email"));
+               i.setPhone(rs.getString("phone"));
+               i.setNotes(rs.getString("notes"));
+               i.setContact_date(rs.getString("contact_date"));
+               i.setClient_id(rs.getInt("client_id"));
                
                clients clients = new clients();
-               clients.setClient_id(rs.getInt(1));
-               clients.setLast_name(rs.getString(2));
-               clients.setFirst_name(rs.getString(3));
+               clients.setClient_id(rs.getInt("client_id"));
+               clients.setLast_name(rs.getString("last_name"));
+               clients.setFirst_name(rs.getString("first_name"));
                
                return i;
                
