@@ -58,7 +58,7 @@ public class UsersController {
         
         request.getSession().setAttribute("message", msg);
         
-        return new ModelAndView("redirect:/Users/viewusers");
+        return new ModelAndView("redirect:/users/viewusers");
     }
     
     @RequestMapping("/users/viewusers/{pageid}")
