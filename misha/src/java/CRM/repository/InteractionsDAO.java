@@ -79,8 +79,8 @@ public class InteractionsDAO {
                i.setInteraction_id(rs.getInt("interaction_id"));
                i.setFirst_name(rs.getString("first_name"));
                i.setLast_name(rs.getString("last_name"));
-               i.setStatus(rs.getString("status"));
-               i.setMethod_of_contact(rs.getString("method_of_contact"));
+               //i.setStatus(rs.getString("status"));
+               //i.setMethod_of_contact(rs.getString("method_of_contact"));
                i.setEmail(rs.getString("email"));
                i.setPhone(rs.getString("phone"));
                i.setNotes(rs.getString("notes"));
