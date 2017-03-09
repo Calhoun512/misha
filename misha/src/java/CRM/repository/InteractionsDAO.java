@@ -68,7 +68,7 @@ public class InteractionsDAO {
     }
     
     public List<interactions> getInteractionsByPage(int start, int total){
-       String sql = "SELECT interactions.interaction_id, interactions.client_id, interactions.contact_date, interactions.first_name, interactions.last_name, interactions.notes, clients.client_id  " + 
+       String sql = "SELECT interactions.interaction_id, interactions.client_id, interactions.contact_date, interactions.first_name, interactions.last_name, interactions.notes, interactions.email clients.client_id  " + 
                "FROM Interactions AS interactions " +
                "INNER JOIN clients AS clients ON clients.client_id = interactions.client_id " +
                "ORDER BY interactions.contact_date " +
