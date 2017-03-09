@@ -71,7 +71,7 @@ public class InteractionsDAO {
        String sql = "SELECT interactions.interaction_id, interactions.client_id, interactions.contact_date, interactions.first_name, interactions.last_name, interactions.notes, clients.client_id  " + 
                "FROM Interactions AS interactions " +
                "INNER JOIN clients AS clients ON clients.client_id = interactions.client_id " +
-               "ORDER BY clients.last_name, interactions.contact_date " +
+               "ORDER BY interactions.contact_date " +
                "LIMIT " + (start - 1) + "," + total; 
        return template.query(sql,new RowMapper<interactions>(){
            public interactions mapRow(ResultSet rs,int row) throws SQLException{
@@ -91,7 +91,7 @@ public class InteractionsDAO {
                clients.setClient_id(rs.getInt("client_id"));
                clients.setLast_name(rs.getString("last_name"));
                clients.setFirst_name(rs.getString("first_name"));
-               
+
                return i;
                
             }

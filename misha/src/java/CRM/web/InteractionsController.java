@@ -83,6 +83,7 @@ public class InteractionsController {
         }
         
         List<interactions> list = dao.getInteractionsByPage(start, total);
+        logger.info(dao.getInteractionsByPage(start,total).toString());
        
         HashMap<String, Object> context = new HashMap<String, Object>();
         context.put("list", list);
