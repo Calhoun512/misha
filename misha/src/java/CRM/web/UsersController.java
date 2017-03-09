@@ -87,7 +87,7 @@ public class UsersController {
             request.getSession().removeAttribute("message");
         }
         
-        return new ModelAndView("viewUsers", context);
+        return new ModelAndView("viewusers", context);
     }
     
     @RequestMapping(value = "/Users/editUser/{user_id}")
