@@ -48,20 +48,21 @@
           <a class="w3-padding w3-dark-grey" href="<c:url value="/clients/clientsform" />"><i class="fa fa-plus-square fa-fw"></i>  Add Client</a>
         </div>
       </div>
-        
-      <div class="w3-dropdown-hover">
-        <a href="<c:url value="/prospects/viewprospects" />" class="w3-padding"><i class="fa fa-microphone fa-fw"></i>  Prospects  <i class="fa fa-caret-down"></i></a>
-        <div class="w3-dropdown-content w3-white w3-card-4">
-          <a class="w3-padding w3-dark-grey" href="<c:url value="/prospects/prospectsform" />"><i class="fa fa-plus-square fa-fw"></i>  Add Prospect</a>
-        </div>
-      </div>
-        
+       
       <div class="w3-dropdown-hover">
         <a href="<c:url value="/interactions/viewinteractions" />" class="w3-padding"><i class="fa fa-microphone fa-fw"></i>  Interactions  <i class="fa fa-caret-down"></i></a>
         <div class="w3-dropdown-content w3-white w3-card-4">
           <a class="w3-padding w3-dark-grey" href="<c:url value="/interactions/interactionsform" />"><i class="fa fa-plus-square fa-fw"></i>  Add Interaction</a>
         </div>
       </div>
+      </sec:authorize>
+      <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <div class="w3-dropdown-hover">
+        <a href="#" class="w3-padding"><i class="fa fa-user fa-fw"></i>  Users  <i class="fa fa-caret-down"></i></a>
+        <div class="w3-dropdown-content w3-white w3-card-4">
+          <a class="w3-padding w3-dark-grey" href="<c:url value="/user/userform" />"><i class="fa fa-plus-square fa-fw"></i>  Add User</a>
+        </div>
+        </div>
       </sec:authorize>
       
       <!--
