@@ -26,6 +26,24 @@ public class interactions implements Serializable {
     private String contact_date;
     private int client_id;
     private Map<String, String> statusMap;
+    private Map<Integer, String> clientsMap;
+
+    public Map<Integer, String> getClientsMap() {
+        return clientsMap;
+    }
+
+    public void setClientsMap(Map<Integer, String> clientsMap) {
+        this.clientsMap = clientsMap;
+    }
+
+    public clients getClients() {
+        return clients;
+    }
+
+    public void setClients(clients clients) {
+        this.clients = clients;
+    }
+    private clients clients;
     
         public Map<String, String> getStatusMap(){
         this.statusMap = new LinkedHashMap<String, String>();

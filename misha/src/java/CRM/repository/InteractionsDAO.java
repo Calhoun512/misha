@@ -92,6 +92,7 @@ public class InteractionsDAO {
                clients.setLast_name(rs.getString("last_name"));
                clients.setFirst_name(rs.getString("first_name"));
 
+               i.setClients(clients);
                return i;
                
             }
