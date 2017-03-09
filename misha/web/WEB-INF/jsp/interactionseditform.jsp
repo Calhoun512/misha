@@ -43,7 +43,7 @@
            <div class="w3-padding-8">
                <label><b>Method of Contact</b></label>
                 <form:select path="method_of_contact" cssClass="w3-input w3-border"  >
-                    <form:option value="">Method of Contact</form:option>
+                     <form:option value="">Method of Contact</form:option>
                     <form:options items="${interactions.contact_type}" />
                 </form:select>
                 <form:errors path="method_of_contact" cssClass="w3-red w3-padding-8 w3-panel" cssStyle="display: block; width: 100%; font-weight:bold;" />
