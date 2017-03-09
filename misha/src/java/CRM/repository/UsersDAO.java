@@ -91,7 +91,7 @@ public class UsersDAO {
         
         
          sql = "UPDATE users SET  `password` = md5(?), enabled = ?, name = ?"
-                + "	   WHERE username = ?";
+                + "WHERE username = ?";
         Object[] values = {users.getPassword(), users.getEnabled(), users.getName(), users.getUsername()};
         int r = template.update(sql, values);
         
