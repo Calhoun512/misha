@@ -29,22 +29,23 @@
             <th>Action</th>
         </tr>  
 
-        <c:forEach var="users" items="${list}">   
+        <c:forEach var="Users" items="${list}">   
             <tr>  
                 <td>${users.username}</td>  
                 <td>${users.name}</td>
+                <td>${Users.Enabled}</td>
                 <td><c:choose>
-    <c:when test="${users.enabled == 0}">
+    <c:when test="${Users.enabled == 0}">
        No
     </c:when>
-    <c:when test="${users.enabled == 1}">
+    <c:when test="${Users.enabled == 1}">
         Yes
     </c:when>
     
 </c:choose></td>
                 <td>
-                    <a href="<c:url value="/users/editusers/${users.username}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
-                    
+                    <a href="<c:url value="/users/editUser/${Users.username}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
+                    <a href="<c:url value="/users/deleteuser/${Users.username}" />"><button class="w3-btn w3-round w3-blue">Edit</button></a>
                 </td>  
             </tr>  
         </c:forEach>  
