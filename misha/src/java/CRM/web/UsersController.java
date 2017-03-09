@@ -113,7 +113,7 @@ public class UsersController {
         return new ModelAndView("redirect:/home");
     }
     
-    @RequestMapping(value = "/Users/deleteuser/{user_id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/Users/deleteuser/{username}", method = RequestMethod.GET)
     public ModelAndView delete(@ModelAttribute ("Users") Users Users, HttpServletRequest request){
         int r = dao.delete(Users);
         
