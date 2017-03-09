@@ -41,7 +41,7 @@
       <th>Client ID</th>
       <th>Action</th>
     </tr>  
-<t
+
     <c:forEach var="interactions" items="${list}">   
       <tr>  
         <td>${interactions.interaction_id}</td>
