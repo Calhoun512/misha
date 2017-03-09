@@ -14,7 +14,7 @@
       <h2>User Information</h2>
     </div>
 
-    <form:form method="post" action="/Misha/Users/save" cssClass="w3-container" commandName="Users">
+    <form:form method="post" action="/Misha/users/save" cssClass="w3-container" commandName="users">
       <div class="w3-padding-8">
         <label><b>Username</b></label>
         <form:input path="username" cssClass="w3-input w3-border"  />
@@ -30,7 +30,7 @@
       <div class="w3-padding-8">
         <label><b>Roles</b></label>
         <form:select multiple="true" path="roles" cssClass="w3-select w3-border">
-            <form:options items="${Users.rolemap}" />
+            <form:options items="${users.rolemap}" />
         </form:select>
         Ctrl + click to select multiple items.
       </div>

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import CRM.objects.Users;
+import CRM.objects.users;
 import CRM.repository.UsersDAO;
 import CRM.objects.Message;
 import java.util.HashMap;
@@ -38,15 +38,15 @@ public class UsersController {
     
     private static final Logger logger = Logger.getLogger(UsersController.class.getName());
     
-    @RequestMapping("/Users/userform")
+    @RequestMapping("/users/userform")
     public ModelAndView showform(){
-        Users Users = new Users();
-        return new ModelAndView("userform","Users", Users);
+        users users = new users();
+        return new ModelAndView("userform","users", users);
     }
     
-    @RequestMapping(value = "/Users/save", method = RequestMethod.POST)
-    public ModelAndView save(@ModelAttribute("User") Users Users, HttpServletRequest request){
-        int r = dao.save(Users);
+    @RequestMapping(value = "/users/save", method = RequestMethod.POST)
+    public ModelAndView save(@ModelAttribute("user") users users, HttpServletRequest request){
+        int r = dao.save(users);
         
         Message msg = null;
         if (r == 1) {
@@ -61,7 +61,7 @@ public class UsersController {
         return new ModelAndView("redirect:/Users/viewusers");
     }
     
-    @RequestMapping("/Users/viewusers/{pageid}")
+    @RequestMapping("/users/viewusers/{pageid}")
     public ModelAndView viewUsers(@PathVariable int pageid, HttpServletRequest request){
         int total = 25;
         int start = 1;
@@ -70,7 +70,7 @@ public class UsersController {
             start = (pageid-1) * total + 1;
         }
         
-        List<Users> list = dao.getUsersByPage(start, total);
+        List<users> list = dao.getUsersByPage(start, total);
         
         HashMap<String, Object> context = new HashMap<String, Object>();
         context.put("list", list);
@@ -90,22 +90,22 @@ public class UsersController {
         return new ModelAndView("viewusers", context);
     }
     
-    @RequestMapping(value = "/Users/editUser/{username}")
+    @RequestMapping(value = "/users/edituser/{username}")
     public ModelAndView edit(@PathVariable String username){
-        Users user = dao.getUsersByUsername(username);
-        return new ModelAndView("usereditform", "command", user);
+        users Users = dao.getUsersByUsername(username);
+        return new ModelAndView("usereditform", "command", Users);
     }
     
-    @RequestMapping(value = "/Users/editsave", method = RequestMethod.POST)
-    public ModelAndView editsave(@ModelAttribute("Users") Users Users, HttpServletRequest request){
-        int r = dao.update(Users);
+    @RequestMapping(value = "/users/editsave", method = RequestMethod.POST)
+    public ModelAndView editsave(@ModelAttribute("users") users users, HttpServletRequest request){
+        int r = dao.update(users);
         
         Message msg = null;
         if(r == 1) {
             msg = new Message(Message.Level.SUCCESS, "User successfully edited");
         }
         else {
-            msg = new Message(Message.Level.ERROR, "Fail to edit user");
+            msg = new Message(Message.Level.ERROR, "Failed to edit user");
         }
         
         request.getSession().setAttribute("message", msg);
@@ -113,9 +113,9 @@ public class UsersController {
         return new ModelAndView("redirect:/home");
     }
     
-    @RequestMapping(value = "/Users/deleteuser/{username}", method = RequestMethod.GET)
-    public ModelAndView delete(@ModelAttribute ("Users") Users Users, HttpServletRequest request){
-        int r = dao.delete(Users);
+    @RequestMapping(value = "/users/deleteuser/{username}", method = RequestMethod.GET)
+    public ModelAndView delete(@ModelAttribute ("users") users users, HttpServletRequest request){
+        int r = dao.delete(users);
         
         Message msg = null;
         if (r == 1) {
@@ -130,7 +130,7 @@ public class UsersController {
         return new ModelAndView("redirect:/home");
     }
     
-    @InitBinder("Users")
+    @InitBinder("users")
     public void initBinder(WebDataBinder webDataBinder){
         webDataBinder.setValidator(userValidation);
     }

@@ -5,7 +5,7 @@
  */
 package CRM.Validation;
 
-import CRM.objects.Users;
+import CRM.objects.users;
 import java.util.logging.Logger;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -22,12 +22,12 @@ public class UserValidation implements Validator{
     
     @Override
     public boolean supports(Class<?> clazz) {
-            return Users.class.isAssignableFrom(clazz);
+            return users.class.isAssignableFrom(clazz);
 }
     @Override
     public void validate(Object target, Errors errors) {
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "user.username.required");
-                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "user.password.required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "Users.username.required");
+                ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "Users.password.required");
     }
     
 }
